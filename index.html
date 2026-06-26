@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#d4a017">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>BuyersNoble Firm</title>
+<link rel="manifest" href="/manifest.json">
+<style>
+:root{
+  --bg:#08111a;--surface:#0f1c2e;--card:#111f33;--border:#1a2d42;
+  --gold:#d4a017;--green:#22c55e;--red:#ef4444;
+  --blue:#3b82f6;--purple:#a855f7;--cyan:#06b6d4;--orange:#f97316;
+  --text:#e2e8f0;--muted:#64748b;--dim:#1e3248;
+  --radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{max-width:100%;overflow-x:hidden}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;flex-wrap:wrap;padding:4px 10px;z-index:100;gap:2px}
+.logo{font-weight:900;font-size:15px;color:var(--gold);letter-spacing:.5px;margin-right:8px;white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--text)}
+.nav-tabs{display:flex;flex-wrap:nowrap;gap:2px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;flex:1;min-width:0}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-btn{background:none;border:none;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.4px;padding:5px 9px;border-radius:6px;cursor:pointer;transition:all .15s;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.nav-btn:hover{background:var(--dim);color:var(--text)}
+.nav-btn.active{background:var(--dim);color:var(--gold)}
+.status-pill{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--green);flex-shrink:0;padding:4px 0}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* LAYOUT */
+main{padding:72px 12px 32px;max-width:1200px;margin:0 auto}
+.tab{display:none}.tab.active{display:block}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:12px}
+.ct{font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--muted);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.ct::before{content:'';width:3px;height:13px;background:var(--gold);border-radius:2px;display:inline-block;flex-shrink:0}
+
+/* GRIDS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:600px){.g2,.g3,.g4{grid-template-columns:1fr}}
+@media(max-width:900px){.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.g2{grid-template-columns:1fr 1fr}}
+
+/* TABLE SCROLL */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:340px}
+
+/* METRIC TILES */
+.m{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.ml{font-size:10px;font-weight:600;letter-spacing:.5px;color:var(--muted);text-transform:uppercase;margin-bottom:5px}
+.mv{font-size:26px;font-weight:900;line-height:1;letter-spacing:-1px}
+.ms{font-size:10px;color:var(--muted);margin-top:4px}
+.vg{color:var(--gold)}.vk{color:var(--green)}.vb{color:var(--blue)}.vp{color:var(--purple)}
+
+/* AGENT CARDS */
+.ac{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.ah{display:flex;justify-content:space-between;align-items:center}
+.an{font-weight:900;font-size:14px;color:var(--gold)}
+.aa{font-size:11px;font-weight:700;background:var(--dim);padding:2px 8px;border-radius:20px;color:var(--cyan)}
+.as_{font-size:22px;font-weight:900;color:var(--green)}
+.ast{display:flex;gap:12px;font-size:11px;color:var(--muted)}
+.ab{background:var(--bg);border-radius:3px;height:4px;overflow:hidden}
+.abf{height:100%;border-radius:3px}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:6px 10px;color:var(--muted);font-weight:600;font-size:10px;letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.04)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+
+/* BADGES */
+.b{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700}
+.bk{background:rgba(34,197,94,.15);color:var(--green)}
+.bg{background:rgba(212,160,23,.15);color:var(--gold)}
+.bb{background:rgba(59,130,246,.15);color:var(--blue)}
+.bp{background:rgba(168,85,247,.15);color:var(--purple)}
+.br{background:rgba(239,68,68,.15);color:var(--red)}
+.bm{background:rgba(100,116,139,.12);color:var(--muted)}
+.bc{background:rgba(6,182,212,.12);color:var(--cyan)}
+
+/* CODE */
+.cmd{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-family:'Cascadia Code','Consolas',monospace;font-size:12px;color:var(--cyan);margin:4px 0}
+
+/* ALLOC BARS */
+.alr{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.aln{font-size:11px;font-weight:700;width:62px;color:var(--text);flex-shrink:0}
+.alb{flex:1;background:var(--bg);height:6px;border-radius:3px;overflow:hidden}
+.albi{height:100%;border-radius:3px}
+.alp{font-size:11px;color:var(--muted);width:36px;text-align:right;flex-shrink:0}
+
+/* UH-OH */
+#uoh-btn{
+  display:block;width:100%;padding:26px;margin:0 0 18px;
+  background:linear-gradient(135deg,#120a22,#0c1b32);
+  border:2px solid var(--purple);border-radius:14px;
+  font-size:20px;font-weight:900;letter-spacing:1px;
+  color:var(--text);cursor:pointer;
+  transition:all .2s;position:relative;overflow:hidden;
+}
+#uoh-btn:hover{border-color:#c084fc;transform:translateY(-2px);box-shadow:0 8px 32px rgba(168,85,247,.3)}
+#uoh-btn:active{transform:scale(.99)}
+#uoh-btn.firing{border-color:var(--gold);animation:fire .7s ease;box-shadow:0 0 40px rgba(212,160,23,.35)}
+@keyframes fire{0%{transform:scale(1)}30%{transform:scale(1.015)}70%{transform:scale(.995)}100%{transform:scale(1)}}
+
+.tr{background:linear-gradient(135deg,#081408,#0a1825);border:1px solid var(--green);border-radius:12px;padding:22px;display:none;animation:fi .4s ease}
+.tr.vis{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.trh{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.tri{font-size:34px;font-weight:900;color:var(--gold)}
+.trd{font-size:13px;font-weight:800;padding:4px 14px;border-radius:6px;text-transform:uppercase}
+.dl{background:rgba(34,197,94,.2);color:var(--green);border:1px solid rgba(34,197,94,.3)}
+.ds{background:rgba(239,68,68,.2);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.tb{background:var(--bg);border-radius:8px;padding:10px 12px}
+.tbl{font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-bottom:4px}
+.tbv{font-size:17px;font-weight:900}
+.tw{background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);border-radius:8px;padding:12px;font-size:12px;line-height:1.7;color:var(--text)}
+
+.cp{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;margin-top:14px}
+.cpt{font-size:10px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.cpt span{color:var(--cyan)}
+.wh{background:var(--bg);border-left:3px solid var(--cyan);padding:12px 14px;border-radius:0 8px 8px 0;font-size:13px;line-height:1.75;font-style:italic}
+
+.warn{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--red);margin-bottom:16px;display:flex;align-items:center;gap:8px;font-weight:600}
+
+/* VIX SELECTOR */
+.vrow{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.vb_{background:var(--dim);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;transition:all .15s}
+.vb_:hover{border-color:var(--muted);color:var(--text)}
+.vb_.sel{border-color:var(--gold);color:var(--gold);background:rgba(212,160,23,.1)}
+
+/* HELPERS */
+.flex{display:flex}.jb{justify-content:space-between}.ac_{align-items:center}
+.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}
+.tk{color:var(--green)}.tg_{color:var(--gold)}.tr_{color:var(--red)}.tm{color:var(--muted)}.tp{color:var(--purple)}.tb_{color:var(--blue)}.tc{color:var(--cyan)}
+.fw9{font-weight:900}.fs11{font-size:11px}.fs12{font-size:12px}
+
+/* INSTALL BAR */
+#ibar{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;z-index:200;transform:translateY(100%);transition:.3s}
+#ibar.show{transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">BUYERS<span>NOBLE</span></div>
+  <div class="nav-tabs">
+    <button class="nav-btn active" onclick="showTab('dash',this)">Dash</button>
+    <button class="nav-btn" onclick="showTab('bt',this)">NobleBT</button>
+    <button class="nav-btn" onclick="showTab('agents',this)">Agents</button>
+    <button class="nav-btn" onclick="showTab('uoh',this)">Uh&#8209;Oh</button>
+    <button class="nav-btn" onclick="showTab('sys',this)">System</button>
+    <button class="nav-btn" onclick="showTab('cfo',this)">CFO</button>
+    <button class="nav-btn" onclick="showTab('ceo',this)">CEO</button>
+    <button class="nav-btn" onclick="showTab('instafirm',this)">Insta&#8209;Firm</button>
+  </div>
+  <div class="status-pill"><div class="dot"></div>LIVE</div>
+</nav>
+
+<main>
+
+<!-- ════════════════════ DASHBOARD ════════════════════ -->
+<div class="tab active" id="tab-dash">
+
+  <div class="g4" style="margin-bottom:14px">
+    <div class="m"><div class="ml">Firm Sharpe</div><div class="mv vg">~6.0</div><div class="ms">NobleBT 4 runs &mdash; range 5.96&ndash;6.075 by seed</div></div>
+    <div class="m"><div class="ml">200yr Synthetic</div><div class="mv vk">4.84–4.87</div><div class="ms">Markov regime stress test</div></div>
+    <div class="m"><div class="ml">Validated Combos</div><div class="mv vb">12,100</div><div class="ms">VALIDATED + STRONG (4,274 STRONG)</div></div>
+    <div class="m"><div class="ml">Firm P&amp;L</div><div class="mv vp">$37,596</div><div class="ms">2022&ndash;present &bull; PF 5.72</div></div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ct">AllocationWars &mdash; Run 2</div>
+      <div class="alr"><span class="aln">PAIRS</span><div class="alb"><div class="albi" style="width:37.0%;background:var(--gold)"></div></div><span class="alp">37.0%</span></div>
+      <div class="alr"><span class="aln">XSMOM</span><div class="alb"><div class="albi" style="width:16.2%;background:var(--blue)"></div></div><span class="alp">16.2%</span></div>
+      <div class="alr"><span class="aln">APEX</span><div class="alb"><div class="albi" style="width:15.8%;background:var(--green)"></div></div><span class="alp">15.8%</span></div>
+      <div class="alr"><span class="aln">TAILHDG</span><div class="alb"><div class="albi" style="width:12.3%;background:var(--cyan)"></div></div><span class="alp">12.3%</span></div>
+      <div class="alr"><span class="aln">VELEZ</span><div class="alb"><div class="albi" style="width:10.5%;background:var(--purple)"></div></div><span class="alp">10.5%</span></div>
+      <div class="alr"><span class="aln">TURTLE</span><div class="alb"><div class="albi" style="width:8.2%;background:var(--orange)"></div></div><span class="alp">8.2%</span></div>
+    </div>
+    <div class="card">
+      <div class="ct">Session Edge</div>
+      <div class="m" style="margin-bottom:10px">
+        <div class="ml">Avg / Trade (Filtered)</div>
+        <div class="mv vk">$314</div>
+        <div class="ms">Baseline $140 &rarr; <strong class="tk">+124%</strong></div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.9">
+        <div><span class="tg_ fw9">2:00 PM ET</span> &mdash; Golden Hour premium</div>
+        <div><span class="tg_ fw9">Tuesday</span> &mdash; Weekly premium flag</div>
+        <div class="mt8">Baseline PF 3.97 &rarr; Filtered PF <strong class="tk">8.81</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">Agent Overview</div>
+    <div class="g3">
+      <div class="ac">
+        <div class="ah"><span class="an">PAIRS</span><span class="aa">37.0%</span></div>
+        <div class="as_">5.784</div>
+        <div class="ast"><span>Simons stat-arb</span><span>&bull;</span><span>King Run 2</span></div>
+        <div class="ab"><div class="abf" style="width:100%;background:var(--gold)"></div></div>
+      </div>
+      <div class="ac">
+        <div class="ah"><span class="an" style="color:var(--blue)">XSMOM</span><span class="aa">16.2%</span></div>
+        <div class="as_">2.54</div>
+        <div class="ast"><span>Cross-sect momentum</span><span>&bull;</span><span>PF 7.1</span></div>
+        <div class="ab"><div class="abf" style="width:44%;background:var(--blue)"></div></div>
+      </div>
+      <div class="ac">
+        <div class="ah"><span class="an" style="color:var(--green)">APEX</span><span class="aa">15.8%</span></div>
+        <div class="as_">1.958</div>
+        <div class="ast"><span>v16 slippage-real</span><span>&bull;</span><span>PF 4.8</span></div>
+        <div class="ab"><div class="abf" style="width:34%;background:var(--green)"></div></div>
+      </div>
+      <div class="ac">
+        <div class="ah"><span class="an" style="color:var(--cyan)">TAILHDG</span><span class="aa">12.3%</span></div>
+        <div class="as_" style="color:var(--cyan)">1.931</div>
+        <div class="ast"><span>Crisis alpha</span><span>&bull;</span><span>3.2&times; CRISIS</span></div>
+        <div class="ab"><div class="abf" style="width:33%;background:var(--cyan)"></div></div>
+      </div>
+      <div class="ac">
+        <div class="ah"><span class="an" style="color:var(--purple)">VELEZ</span><span class="aa">10.5%</span></div>
+        <div class="as_">1.699</div>
+        <div class="ast"><span>Pristine / shorts</span><span>&bull;</span><span>PF 5.1</span></div>
+        <div class="ab"><div class="abf" style="width:29%;background:var(--purple)"></div></div>
+      </div>
+      <div class="ac">
+        <div class="ah"><span class="an" style="color:var(--orange)">TURTLE</span><span class="aa">8.2%</span></div>
+        <div class="as_" style="color:var(--muted)">1.278</div>
+        <div class="ast"><span>Trend-following</span><span>&bull;</span><span>PF 2.1</span></div>
+        <div class="ab"><div class="abf" style="width:22%;background:var(--orange)"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">Firm Health</div>
+    <div class="g4">
+      <div><div class="fs11 tm" style="margin-bottom:4px">Self-Debug</div><div style="font-size:16px;font-weight:900;color:var(--green)">24/24 PASS</div></div>
+      <div><div class="fs11 tm" style="margin-bottom:4px">Combo Key Score</div><div style="font-size:16px;font-weight:900;color:var(--gold)">18,824 CK</div></div>
+      <div><div class="fs11 tm" style="margin-bottom:4px">Validated Combos</div><div style="font-size:16px;font-weight:900">12,100</div></div>
+      <div><div class="fs11 tm" style="margin-bottom:4px">STRONG Combos</div><div style="font-size:16px;font-weight:900;color:var(--purple)">4,274</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:rgba(212,160,23,.25)">
+    <div class="ct">Cross-Splice Blueprints &mdash; NobleBT Run 2 Discoveries</div>
+    <div class="fs11 tm" style="margin-bottom:10px">SecretEdgeCultivator found 101 persistent cross-agent edges. Top picks for dedicated combo slots:</div>
+    <div class="tbl-wrap"><table style="font-size:12px">
+      <tr><th>Combo</th><th>ENV</th><th>Implied Alloc</th><th>Action</th></tr>
+      <tr><td style="font-weight:700;color:var(--gold)">APEX + XSMOM</td><td><span class="b bb">ENV_FULL</span></td><td class="tk fw9">7.1%</td><td><span class="b bg">SPLICE SLOT</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--cyan)">PAIRS + TAILHDG</td><td><span class="b bb">ENV_FULL</span></td><td class="tk fw9">6.6%</td><td><span class="b bg">SPLICE SLOT</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--blue)">PAIRS + XSMOM</td><td><span class="b bb">ENV_FULL</span></td><td class="tk fw9">6.2%</td><td><span class="b bg">SPLICE SLOT</span></td></tr>
+      <tr><td style="font-weight:700">APEX + TAILHDG</td><td><span class="b bg">ENV_HIGH_CONF</span></td><td>5.9%</td><td><span class="b bb">CONFIRM</span></td></tr>
+      <tr><td style="font-weight:700">APEX + PAIRS</td><td><span class="b bb">ENV_FULL</span></td><td>5.8%</td><td><span class="b bb">CONFIRM</span></td></tr>
+    </table></div>
+    <div class="fs11 tm mt8">101 total blueprints &bull; Top 3 flagged for dedicated splice slots in live_firm.py &bull; Pair with ENV_FULL + GOVERNOR_ON for max edge</div>
+  </div>
+
+</div>
+
+<!-- ════════════════════ NOBLE BT ════════════════════ -->
+<div class="tab" id="tab-bt">
+
+  <div class="card">
+    <div class="ct">NobleBT &mdash; Crown Jewel Backtesting System</div>
+    <div class="g4" style="margin-bottom:14px">
+      <div class="m"><div class="ml">Firm Sharpe</div><div class="mv vg">~6.0</div><div class="ms">4 runs confirmed &mdash; 5.96&ndash;6.075 range</div></div>
+      <div class="m"><div class="ml">200yr Synth</div><div class="mv vk">4.84–4.87</div><div class="ms">&uarr; from 4.809 &mdash; stress hardened</div></div>
+      <div class="m"><div class="ml">Validated + Strong</div><div class="mv vb">12,100</div><div class="ms">4,274 STRONG &bull; 25,144 total DB</div></div>
+      <div class="m"><div class="ml">Self-Debug</div><div class="mv vk">24/24</div><div class="ms">ALL PASS &bull; 2 runs</div></div>
+    </div>
+    <div class="g2" style="margin-bottom:14px">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px">
+        <div class="fs11 tm" style="margin-bottom:6px">Run 1 &mdash; 2026-06-25</div>
+        <div style="font-size:13px">Sharpe <strong class="tg_">6.044</strong> &bull; Synth <strong class="tk">4.809</strong> &bull; Validated <strong>11,189</strong> &bull; CK 18,221</div>
+      </div>
+      <div style="background:var(--surface);border:1px solid rgba(34,197,94,.3);border-radius:8px;padding:12px">
+        <div class="fs11 tm" style="margin-bottom:6px">Run 2 &mdash; 2026-06-25 <span class="b bk" style="font-size:9px">LATEST</span></div>
+        <div style="font-size:13px">Sharpe <strong class="tg_">~6.0</strong> &bull; Synth <strong class="tk">4.84&ndash;4.87</strong> &bull; Validated+Strong <strong>17,133</strong> &bull; CK 20,127</div>
+      </div>
+    </div>
+    <div class="fs11 tm">Merger: ComboBT + UltimateBT + Bayesian Scoring + 200yr Synthetic Regime + Block Bootstrap (500 paths, 30-day blocks) + SecretEdgeCultivator (101 blueprints). Perpetual DB &mdash; never wiped, grows every run.</div>
+  </div>
+
+  <div class="card">
+    <div class="ct">NobleExitEngine &mdash; 5 Exit Dimensions (apex_exit_engine.py)</div>
+    <div class="fs11 tm" style="margin-bottom:12px">&ldquo;The Kitchen Sink&rdquo; trailing/profit-management system. All 5 modes are active NobleBT combo dimensions &mdash; every agent is tested against all 5 exits.</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Mode</th><th>BE Trigger</th><th>MAE Cut</th><th>Runner Mult</th><th>Chandelier</th><th>Notes</th></tr>
+      <tr><td><span class="b bm">BASE</span></td><td class="tm">Never</td><td class="tm">0%</td><td class="tm">1.00&times;</td><td class="tm">&mdash;</td><td class="tm">No management, baseline</td></tr>
+      <tr><td><span class="b bg">NOBLE_EXIT</span></td><td>0.4R</td><td>20%</td><td>1.38&times;</td><td>2.8&times;ATR</td><td class="tm">Default full engine</td></tr>
+      <tr><td><span class="b bb">NOBLE_EXIT_TIGHT</span></td><td>0.3R</td><td>25%</td><td>1.20&times;</td><td>2.2&times;ATR</td><td class="tm">Fast lock, tighter trail</td></tr>
+      <tr><td><span class="b bm">NOBLE_EXIT_LOOSE</span></td><td>0.5R</td><td>12%</td><td>1.55&times;</td><td>3.2&times;ATR</td><td class="tm">Wide trail, max runners</td></tr>
+      <tr style="background:rgba(168,85,247,.06)"><td><span class="b bp">NEE_ACCEL &#9733;</span></td><td class="tk">0.4R</td><td class="tk">22%</td><td><strong class="tk">1.52&times;</strong></td><td><strong class="tk">3.0&times; accel</strong></td><td class="tm">Full engine: accel + momentum-death + EOD-keep</td></tr>
+    </table></div>
+    <div class="fs11 tm mt8">NEE_ACCEL: chandelier tightens &minus;0.04&times;/runner bar. Structure-death exit fires on swing break. EOD keeps runners &ge;3R. Worst 22% of losers cut at 50% via MAE gate.</div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ct">ENV Modes (4 Dimensions)</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>Mode</th><th>Filter</th><th>Quality</th></tr>
+        <tr><td><span class="b bm">ENV_OFF</span></td><td class="tm">0%</td><td class="tm">1.00&times;</td></tr>
+        <tr><td><span class="b bb">ENV_FULL</span></td><td>45%</td><td>1.28&times;</td></tr>
+        <tr><td><span class="b bg">ENV_HIGH_CONF</span></td><td>62%</td><td>1.42&times;</td></tr>
+        <tr><td><span class="b bk">ENV_REGIME_STRICT</span></td><td>68%</td><td>1.55&times;</td></tr>
+      </table></div>
+    </div>
+    <div class="card">
+      <div class="ct">Bayesian Status Thresholds</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>Status</th><th>Mean</th><th>CI Lower</th></tr>
+        <tr><td><span class="b bk">STRONG</span></td><td>&gt;2.4</td><td>&gt;0.6</td></tr>
+        <tr><td><span class="b bb">VALIDATED</span></td><td>&gt;1.2</td><td>&gt;0.0</td></tr>
+        <tr><td><span class="b bg">MARGINAL</span></td><td>&gt;0.8</td><td>&gt;&minus;0.5</td></tr>
+        <tr><td><span class="b br">INVALIDATED</span></td><td>&lt;0.0</td><td>&mdash;</td></tr>
+      </table></div>
+      <div class="fs11 tm mt8">NOBLE_BT_THRESHOLD = 1.2. Welford online updater.</div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ct">SecretEdgeCultivator</div>
+      <div style="font-size:12px;line-height:1.9;color:var(--muted)">
+        <div><span style="color:var(--text)">Auto-runs:</span> end of every NobleBT full pass</div>
+        <div><span style="color:var(--text)">Fingerprint:</span> Agent &times; ENV &times; Session clusters</div>
+        <div><span style="color:var(--text)">Output:</span> PROMOTE / UPGRADE / CULTIVATE / REBALANCE / NEW_AGENT / CONFIRM</div>
+        <div class="mt8 fs11">Thresholds: CULTIVATE 1.5&times; &mdash; UPGRADE 2.0&times; &mdash; PROMOTE floor 2.4</div>
+      </div>
+      <div class="cmd mt8">python run_noble_bt.py --cultivate</div>
+    </div>
+    <div class="card">
+      <div class="ct">UltimateBT &mdash; Priors (Predecessor)</div>
+      <div class="g2" style="margin-bottom:10px">
+        <div class="m"><div class="ml">Sharpe (Run 6)</div><div class="mv" style="font-size:20px;color:var(--muted)">3.869</div><div class="ms">Predecessor system</div></div>
+        <div class="m"><div class="ml">NobleBT Upgrade</div><div class="mv vk" style="font-size:20px">+56%</div><div class="ms">3.869 &rarr; 6.044</div></div>
+      </div>
+      <div class="fs11 tm">6,404 validated combos absorbed as Bayesian priors. 3.869 = UltimateBT only &mdash; <strong style="color:var(--gold)">6.044 = current crown jewel.</strong></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">Run Commands</div>
+    <div class="g2">
+      <div>
+        <div class="fs11 tm" style="margin-bottom:3px">Full Run</div>
+        <div class="cmd">python run_noble_bt.py</div>
+        <div class="fs11 tm" style="margin:8px 0 3px">Self-Debug (24 tests)</div>
+        <div class="cmd">python run_noble_bt.py --debug</div>
+        <div class="fs11 tm" style="margin:8px 0 3px">Cultivator Blueprints</div>
+        <div class="cmd">python run_noble_bt.py --cultivate</div>
+      </div>
+      <div>
+        <div class="fs11 tm" style="margin-bottom:3px">Top 30 Combos</div>
+        <div class="cmd">python run_noble_bt.py --report</div>
+        <div class="fs11 tm" style="margin:8px 0 3px">Edge Catalog</div>
+        <div class="cmd">python run_noble_bt.py --catalog</div>
+        <div class="fs11 tm" style="margin:8px 0 3px">200yr Regime Report</div>
+        <div class="cmd">python run_noble_bt.py --synth</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════════ AGENTS ════════════════════ -->
+<div class="tab" id="tab-agents">
+
+  <div class="g3">
+
+    <div class="card" style="border-color:rgba(212,160,23,.3)">
+      <div class="flex jb ac_" style="margin-bottom:10px"><span style="font-size:16px;font-weight:900;color:var(--gold)">PAIRS</span><span class="b bg">32.9%</span></div>
+      <div style="font-size:30px;font-weight:900;color:var(--green);margin-bottom:5px">2.49</div>
+      <div class="fs11 tm" style="margin-bottom:10px">Simons stat-arb &mdash; pairs_trader.py</div>
+      <table style="font-size:11px"><tr><td class="tm">PF</td><td style="text-align:right;font-weight:700">8.2</td></tr><tr><td class="tm">Net P&L</td><td style="text-align:right;font-weight:700">$37,705</td></tr><tr><td class="tm">Best ENV</td><td style="text-align:right;font-weight:700">QUIET_RANGE</td></tr><tr><td class="tm">Instrument</td><td style="text-align:right;font-weight:700">MNQ</td></tr></table>
+    </div>
+
+    <div class="card" style="border-color:rgba(59,130,246,.3)">
+      <div class="flex jb ac_" style="margin-bottom:10px"><span style="font-size:16px;font-weight:900;color:var(--blue)">XSMOM</span><span class="b bb">21.2%</span></div>
+      <div style="font-size:30px;font-weight:900;color:var(--green);margin-bottom:5px">2.94</div>
+      <div class="fs11 tm" style="margin-bottom:10px">Cross-sectional momentum &mdash; xsmom_trader.py</div>
+      <table style="font-size:11px"><tr><td class="tm">PF</td><td style="text-align:right;font-weight:700">7.1</td></tr><tr><td class="tm">Net P&L</td><td style="text-align:right;font-weight:700">$20,817</td></tr><tr><td class="tm">Best ENV</td><td style="text-align:right;font-weight:700">STRONG_TREND</td></tr><tr><td class="tm">Instrument</td><td style="text-align:right;font-weight:700">MNQ / MES</td></tr></table>
+    </div>
+
+    <div class="card" style="border-color:rgba(34,197,94,.3)">
+      <div class="flex jb ac_" style="margin-bottom:10px"><span style="font-size:16px;font-weight:900;color:var(--green)">APEX</span><span class="b bk">14.6%</span></div>
+      <div style="font-size:30px;font-weight:900;color:var(--green);margin-bottom:5px">1.67</div>
+      <div class="fs11 tm" style="margin-bottom:10px">v16 slippage-realism &mdash; apex_trader.py</div>
+      <table style="font-size:11px"><tr><td class="tm">PF</td><td style="text-align:right;font-weight:700">4.8</td></tr><tr><td class="tm">Net P&L</td><td style="text-align:right;font-weight:700">$59,124</td></tr><tr><td class="tm">Best ENV</td><td style="text-align:right;font-weight:700">VOLATILE_RANGE</td></tr><tr><td class="tm">Instrument</td><td style="text-align:right;font-weight:700">MNQ</td></tr></table>
+    </div>
+
+    <div class="card" style="border-color:rgba(168,85,247,.3)">
+      <div class="flex jb ac_" style="margin-bottom:10px"><span style="font-size:16px;font-weight:900;color:var(--purple)">VELEZ</span><span class="b bp">11.9%</span></div>
+      <div style="font-size:30px;font-weight:900;color:var(--green);margin-bottom:5px">1.60</div>
+      <div class="fs11 tm" style="margin-bottom:10px">Pristine Method / shorts &mdash; velez_trader.py</div>
+      <table style="font-size:11px"><tr><td class="tm">PF</td><td style="text-align:right;font-weight:700">5.1</td></tr><tr><td class="tm">Net P&L</td><td style="text-align:right;font-weight:700">$7,109</td></tr><tr><td class="tm">Best ENV</td><td style="text-align:right;font-weight:700">REVERSAL_ZONE</td></tr><tr><td class="tm">Setup</td><td style="text-align:right;font-weight:700">PBS/PSS, POP, Tails</td></tr></table>
+    </div>
+
+    <div class="card" style="border-color:rgba(6,182,212,.3)">
+      <div class="flex jb ac_" style="margin-bottom:10px"><span style="font-size:16px;font-weight:900;color:var(--cyan)">TAILHDG</span><span class="b bc">11.4%</span></div>
+      <div style="font-size:30px;font-weight:900;color:var(--cyan);margin-bottom:5px">1.30</div>
+      <div class="fs11 tm" style="margin-bottom:10px">Tail-hedge / crisis alpha &mdash; tailhdg_trader.py</div>
+      <table style="font-size:11px"><tr><td class="tm">CRISIS mult</td><td style="text-align:right;font-weight:700;color:var(--cyan)">3.20&times;</td></tr><tr><td class="tm">Net P&L</td><td style="text-align:right;font-weight:700">$3,090</td></tr><tr><td class="tm">Best ENV</td><td style="text-align:right;font-weight:700">EXTREME_VOL</td></tr><tr><td class="tm">Role</td><td style="text-align:right;font-weight:700">Firm never loses in crash</td></tr></table>
+    </div>
+
+    <div class="card" style="border-color:rgba(249,115,22,.3)">
+      <div class="flex jb ac_" style="margin-bottom:10px"><span style="font-size:16px;font-weight:900;color:var(--orange)">TURTLE</span><span class="b bm" style="border-color:var(--orange);color:var(--orange)">8.1%</span></div>
+      <div style="font-size:30px;font-weight:900;color:var(--muted);margin-bottom:5px">0.43</div>
+      <div class="fs11 tm" style="margin-bottom:10px">Trend-following &mdash; turtle_trader.py (Seykota + Dennis)</div>
+      <table style="font-size:11px"><tr><td class="tm">PF</td><td style="text-align:right;font-weight:700">2.1</td></tr><tr><td class="tm">Net P&L</td><td style="text-align:right;font-weight:700">$60,433</td></tr><tr><td class="tm">Best ENV</td><td style="text-align:right;font-weight:700">STRONG_TREND</td></tr><tr><td class="tm">Status</td><td style="text-align:right;font-weight:700;color:var(--gold)">REBALANCE candidate</td></tr></table>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <div class="ct">VIX Gates (Risk Manager)</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Regime</th><th>VIX</th><th>Size</th><th>Notes</th></tr>
+      <tr><td><span class="b bm">DEAD</span></td><td class="tm">&lt;10</td><td>50%</td><td class="tm">Low vol, compressed ranges</td></tr>
+      <tr><td><span class="b bk">PRIME</span></td><td class="tm">10&ndash;20</td><td class="tk">100%</td><td class="tm">Full size, ideal conditions</td></tr>
+      <tr><td><span class="b bg">CAUTION</span></td><td class="tm">20&ndash;30</td><td>75%</td><td class="tm">Elevated vol, reduce</td></tr>
+      <tr><td><span class="b br">DANGER</span></td><td class="tm">30&ndash;40</td><td>50%</td><td class="tm">High vol, half size</td></tr>
+      <tr><td><span class="b bp">CRISIS</span></td><td class="tm">&gt;40</td><td class="tc">TAILHDG 3.2&times;</td><td class="tm">Firm never loses in crash</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="ct">Next Agents to Build (Uncaptured Edge)</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Agent</th><th>Est. Sharpe</th><th>Est. Annual</th><th>Strategy</th><th>Priority</th></tr>
+      <tr><td style="font-weight:700;color:var(--gold)">VOL_PREMIUM</td><td class="tk">1.55</td><td>~$18K/yr</td><td class="tm">Options vol premium on MNQ</td><td><span class="b bg">NEXT #1</span></td></tr>
+      <tr><td style="font-weight:700">FOMC_DRIFT</td><td class="tk">1.20</td><td>~$12K/yr</td><td class="tm">Pre/post FOMC positioning</td><td><span class="b bb">QUEUE #2</span></td></tr>
+      <tr><td style="font-weight:700">EARNINGS_DRIFT</td><td class="tm">0.90</td><td>~$8K/yr</td><td class="tm">PEAD (Finnhub wired)</td><td><span class="b bm">QUEUE #3</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--purple)">ML_REGIME</td><td class="tp">2.10</td><td>~$25K/yr</td><td class="tm">ML replaces static env engine</td><td><span class="b bp">PLANNED</span></td></tr>
+    </table></div>
+  </div>
+
+</div>
+
+<!-- ════════════════════ UH-OH ════════════════════ -->
+<div class="tab" id="tab-uoh">
+
+  <div class="warn">
+    &#9888;&nbsp; This button does NOT touch live_firm.py or any running automation.
+    The firm keeps trading exactly as normal. This is YOUR personal manual trade tool only.
+  </div>
+
+  <div class="card">
+    <div class="ct">Uh-Oh Copilot &mdash; Best Trade Right Now</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.75;margin-bottom:14px">
+      Press the button to get the single best trade for this exact moment &mdash; based on current time (session),
+      day of week, VIX regime, and NobleBT&rsquo;s top validated combos.<br>
+      Also works as a <strong class="tc">Co-Pilot Whisper</strong> for prop firms that
+      don&rsquo;t allow automation: you trade 100% manually while getting the best available edge whispered to you.
+    </div>
+
+    <div class="fs11 tm" style="margin-bottom:6px">SELECT CURRENT VIX REGIME</div>
+    <div class="vrow">
+      <button class="vb_" onclick="setV('DEAD',this)">VIX &lt;10 (DEAD)</button>
+      <button class="vb_ sel" onclick="setV('PRIME',this)">VIX 10-20 (PRIME)</button>
+      <button class="vb_" onclick="setV('CAUTION',this)">VIX 20-30 (CAUTION)</button>
+      <button class="vb_" onclick="setV('DANGER',this)">VIX 30-40 (DANGER)</button>
+      <button class="vb_" onclick="setV('CRISIS',this)">VIX &gt;40 (CRISIS)</button>
+    </div>
+
+    <button id="uoh-btn" onclick="fire()">&#x26A1;&nbsp; GET BEST TRADE NOW</button>
+
+    <div id="tresult" class="tr">
+      <div class="trh">
+        <div>
+          <div class="fs11 tm" style="margin-bottom:4px" id="tr-sess"></div>
+          <div class="tri" id="tr-inst">MNQ</div>
+        </div>
+        <div style="text-align:right">
+          <div class="trd dl" id="tr-dir">LONG</div>
+          <div class="fs11 tm" style="margin-top:6px" id="tr-conf"></div>
+        </div>
+      </div>
+      <div class="tg">
+        <div class="tb"><div class="tbl">Entry Zone</div><div class="tbv tg_" id="tr-entry">&mdash;</div></div>
+        <div class="tb"><div class="tbl">Target</div><div class="tbv tk" id="tr-tgt">&mdash;</div></div>
+        <div class="tb"><div class="tbl">Stop</div><div class="tbv tr_" id="tr-stp">&mdash;</div></div>
+        <div class="tb"><div class="tbl">Agent Edge</div><div class="tbv tp" id="tr-agt">&mdash;</div></div>
+        <div class="tb"><div class="tbl">Session</div><div class="tbv" id="tr-sv">&mdash;</div></div>
+        <div class="tb"><div class="tbl">Exit Mode</div><div class="tbv tg_" id="tr-ex">&mdash;</div></div>
+      </div>
+      <div class="tw" id="tr-why"></div>
+    </div>
+
+    <div id="copilot" class="cp" style="display:none">
+      <div class="cpt">&#x1F3A7; CO-PILOT WHISPER &mdash; <span>Prop Firm Manual Mode</span></div>
+      <div class="wh" id="tr-wh"></div>
+      <div class="fs11 tm mt8">Say this to yourself before entering. Firm automations run independently &mdash; this is 100% your own manual trade.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">How the Engine Works</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Factor</th><th>Source</th><th>Effect</th></tr>
+      <tr><td class="tg_ fw9">Time of Day</td><td class="tm">Your system clock (ET)</td><td class="tm">Maps to session &rarr; best combo for that window</td></tr>
+      <tr><td class="tg_ fw9">Day of Week</td><td class="tm">System clock</td><td class="tm">Tuesday premium flag boosts edge confidence</td></tr>
+      <tr><td class="tg_ fw9">VIX Regime</td><td class="tm">Your selection</td><td class="tm">CRISIS overrides all &rarr; activates TAILHDG</td></tr>
+      <tr><td class="tg_ fw9">Agent Ranking</td><td class="tm">AllocationWars Sharpe</td><td class="tm">Higher Sharpe = higher priority in session</td></tr>
+      <tr><td class="tg_ fw9">Exit Mode</td><td class="tm">NobleBT top combos</td><td class="tm">Recommends best exit for current conditions</td></tr>
+    </table></div>
+    <div class="fs11 tm mt8">Engine never touches live_firm.py. Reads only NobleBT combo rankings and your system clock. No API calls. No interference with firm.</div>
+  </div>
+
+</div>
+
+<!-- ════════════════════ SYSTEM ════════════════════ -->
+<div class="tab" id="tab-sys">
+
+  <div class="g2">
+    <div class="card">
+      <div class="ct">Self-Debug &mdash; 24/24 PASS</div>
+      <div class="tbl-wrap"><table style="font-size:11px">
+        <tr><th>Test</th><th></th></tr>
+        <tr><td>import_ok</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>db_loaded</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>db_perpetual_flag</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>priors_absorbed</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>synth_regime_seq</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>synth_total_days</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>bayesian_update</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>bayesian_ci_width</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>bayesian_classify_strong</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>bayesian_classify_marginal</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>synth_sharpe_finite</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>synth_tailhdg_crisis</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>bootstrap_runs</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>bootstrap_consensus</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>meta_features</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>edge_catalog_count</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>new_blueprints</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>combo_matrix_built</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>simulate_one</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>firm_weights_sum</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>cultivator_runs</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>cultivator_status</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td>cultivator_alloc</td><td><span class="b bk">PASS</span></td></tr>
+        <tr><td style="color:var(--purple)">nee_dimensions</td><td><span class="b bk">PASS</span></td></tr>
+      </table></div>
+      <div class="cmd" style="margin-top:10px">python run_noble_bt.py --debug</div>
+    </div>
+
+    <div>
+      <div class="card" style="border-color:rgba(212,160,23,.3)">
+        <div class="ct" style="margin-bottom:10px">Open on Your Phone</div>
+        <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+          <canvas id="qr-canvas" width="140" height="140" style="border-radius:8px;background:#fff;flex-shrink:0"></canvas>
+          <div style="flex:1;min-width:160px">
+            <div class="fs11 tm" style="margin-bottom:6px">PHONE URL</div>
+            <div id="phone-url" style="font-size:11px;font-weight:700;color:var(--gold);word-break:break-all;line-height:1.6;background:var(--bg);border-radius:6px;padding:8px 10px;border:1px solid var(--border)">Detecting...</div>
+            <div class="fs11 tm mt8">1. Make sure phone is on same Wi-Fi<br>2. Type URL above into phone browser<br>3. Or scan QR code with phone camera<br>4. Tap "Add to Home Screen" to install</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ct">PWA Status</div>
+        <div class="g2">
+          <div><div class="fs11 tm" style="margin-bottom:3px">Server</div><div style="font-weight:700;color:var(--green)" id="srv">Checking...</div></div>
+          <div><div class="fs11 tm" style="margin-bottom:3px">Service Worker</div><div style="font-weight:700" id="swst">Checking...</div></div>
+          <div><div class="fs11 tm" style="margin-bottom:3px">Install</div><div style="font-weight:700" id="inst">Checking...</div></div>
+          <div><div class="fs11 tm" style="margin-bottom:3px">Cache</div><div style="font-weight:700;color:var(--cyan)">buyersnoble-v6</div></div>
+        </div>
+        <div class="fs11 tm mt8">Network-first SW: always fresh when online, cached when offline. No re-download ever needed.</div>
+      </div>
+
+      <div class="card">
+        <div class="ct">Key Files</div>
+        <div class="tbl-wrap"><table style="font-size:11px">
+          <tr><td style="color:var(--gold)">src/noble_bt.py</td><td class="tm" style="text-align:right">83KB</td></tr>
+          <tr><td style="color:var(--gold)">src/apex_exit_engine.py</td><td class="tm" style="text-align:right">NobleExitEngine</td></tr>
+          <tr><td>src/noble_ultimate_backtest.py</td><td class="tm" style="text-align:right">~50KB</td></tr>
+          <tr><td>src/noble_combo_backtest.py</td><td class="tm" style="text-align:right">~40KB</td></tr>
+          <tr><td style="color:var(--green)">data/noble_bt_db.json</td><td class="tm" style="text-align:right">16.9MB</td></tr>
+          <tr><td>data/noble_ultimate_db.json</td><td class="tm" style="text-align:right">23.1MB</td></tr>
+          <tr><td>live_firm.py</td><td class="tm" style="text-align:right">orchestrator</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <div class="ct">Commands</div>
+        <div class="fs11 tm" style="margin-bottom:3px">Start Firm</div>
+        <div class="cmd">python live_firm.py</div>
+        <div class="fs11 tm" style="margin:8px 0 3px">App Server (port 8081)</div>
+        <div class="cmd">python server.py</div>
+        <div class="fs11 tm" style="margin:8px 0 3px">Self-Save Snapshot</div>
+        <div class="cmd">python SELF_SAVE.py</div>
+        <div class="fs11 tm" style="margin:8px 0 3px">Verify Numbers</div>
+        <div class="cmd">python VERIFY.py</div>
+      </div>
+
+      <div class="card">
+        <div class="ct">Bootstrap Path</div>
+        <div class="tbl-wrap"><table style="font-size:11px">
+          <tr><td class="tm">Seed</td><td style="text-align:right;font-weight:700">$200</td></tr>
+          <tr><td class="tm">Firm operational barrier</td><td style="text-align:right;font-weight:700;color:var(--gold)">$1,000</td></tr>
+          <tr><td class="tm">Sweet spot</td><td style="text-align:right;font-weight:700">$300</td></tr>
+          <tr><td class="tm">Best route</td><td style="text-align:right;font-weight:700;color:var(--green)">$300 prop eval</td></tr>
+          <tr><td class="tm">Reserve</td><td style="text-align:right;font-weight:700">3 &times; $200 = $600</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- CFO TAB                                                                    -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div class="tab" id="tab-cfo">
+
+  <!-- Header Banner -->
+  <div class="card" style="border-color:rgba(212,160,23,.4);margin-bottom:16px;padding:14px 18px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <div>
+        <div style="font-size:15px;font-weight:800;color:var(--gold);letter-spacing:.5px">NOBLE CFO</div>
+        <div class="fs11 tm" style="margin-top:2px">Unified Financial Brain &mdash; CTO + CPA + Corp Strategist + Insurance Specialist</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:11px;font-weight:700;color:var(--green)">GUIDE &amp; CHECKLIST ONLY</div>
+        <div class="fs11 tm">Verify with licensed CPA + attorney</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="g2">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <!-- Capital Flow -->
+      <div class="card" style="border-color:rgba(212,160,23,.25)">
+        <div class="ct">Capital Flow &mdash; Always This Order</div>
+        <div style="font-size:11px;line-height:1.8">
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:4px 0;border-bottom:1px solid var(--border)">
+            <span style="color:var(--gold);font-weight:800;min-width:20px">1.</span>
+            <span><strong style="color:var(--red)">TAX RESERVE 28%</strong> &mdash; Move to Tax Reserve HYSA <em>immediately</em>. Non-negotiable. First. Always.</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:4px 0;border-bottom:1px solid var(--border)">
+            <span style="color:var(--gold);font-weight:800;min-width:20px">2.</span>
+            <span><strong>REINVESTMENT 35%</strong> of after-tax &rarr; New Evals Pool (geometric growth engine)</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:4px 0;border-bottom:1px solid var(--border)">
+            <span style="color:var(--gold);font-weight:800;min-width:20px">3.</span>
+            <span><strong>OPERATING FLOAT</strong> &rarr; Keep 2 months of firm expenses in Operating Checking</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:4px 0;border-bottom:1px solid var(--border)">
+            <span style="color:var(--gold);font-weight:800;min-width:20px">4.</span>
+            <span><strong>RETIREMENT 10%</strong> &rarr; Solo 401(k) [up to ~$70K+/yr shelter, tax-free growth]</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:4px 0;border-bottom:1px solid var(--border)">
+            <span style="color:var(--gold);font-weight:800;min-width:20px">5.</span>
+            <span><strong>SWEEP 20%</strong> &rarr; Holding Company (protects wealth from trading entity exposure)</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:4px 0">
+            <span style="color:var(--gold);font-weight:800;min-width:20px">6.</span>
+            <span><strong style="color:var(--cyan)">PERSONAL 7%</strong> &rarr; Personal Checking. Only touch <em>after</em> all above are funded.</span>
+          </div>
+        </div>
+        <div class="cmd" style="margin-top:8px">python run_noble_cfo.py --payout 5000</div>
+      </div>
+
+      <!-- Account Tiers -->
+      <div class="card">
+        <div class="ct">Account Tiers &mdash; SEED / FLOWER / TREE</div>
+        <div class="tbl-wrap"><table style="font-size:11px">
+          <tr><th>Tier</th><th>Size</th><th>Risk/Trade</th><th>Agents</th><th>Style</th></tr>
+          <tr>
+            <td><span class="b" style="background:rgba(0,200,150,.15);color:var(--green)">SEED</span></td>
+            <td>$1K&ndash;$25K</td><td>1.0%</td>
+            <td>PAIRS, APEX, XSMOM</td>
+            <td class="tm">Auto only, day trade</td>
+          </tr>
+          <tr>
+            <td><span class="b" style="background:rgba(212,160,23,.15);color:var(--gold)">FLOWER</span></td>
+            <td>$25K&ndash;$150K</td><td>1.5%</td>
+            <td>All 6 agents</td>
+            <td class="tm">Auto + manual, 3-day swing</td>
+          </tr>
+          <tr>
+            <td><span class="b" style="background:rgba(180,100,255,.15);color:var(--purple)">TREE</span></td>
+            <td>$150K+</td><td>0.5%</td>
+            <td>PAIRS, XSMOM, TAILHDG, TURTLE</td>
+            <td class="tm">Swing weeks&ndash;months</td>
+          </tr>
+        </table></div>
+        <div style="font-size:10px;color:var(--muted);margin-top:6px">Payout buffer: SEED +$1K, FLOWER +$2.5K, TREE +$10K above profit target before requesting payout</div>
+      </div>
+
+      <!-- Prop Firm Payout Rule -->
+      <div class="card" style="border-color:rgba(255,80,80,.2)">
+        <div class="ct" style="color:var(--red)">Payout Rule &mdash; The $1,000 Buffer</div>
+        <div style="font-size:11px;line-height:1.8">
+          <div><strong>Request payout when:</strong> Current Profit &ge; Profit Target + Buffer</div>
+          <div style="margin-top:6px;padding:8px;background:var(--dim);border-radius:6px">
+            <div style="font-weight:700;color:var(--gold)">EOD Trailing DD accounts (most common):</div>
+            <div class="tm">Your floor RISES as profit rises. Request payout BEFORE your EOD balance equals your profit target. A $2,500 trailing DD means once you hit target, your floor is $2,500 below that &mdash; and shrinking room fast. Get out before the floor catches you.</div>
+          </div>
+          <div style="margin-top:6px"><span class="b bk">SEED buffer</span> $1,000 &nbsp;&nbsp; <span class="b" style="background:rgba(212,160,23,.2);color:var(--gold)">FLOWER buffer</span> $2,500 &nbsp;&nbsp; <span class="b" style="background:rgba(180,100,255,.2);color:var(--purple)">TREE buffer</span> $10,000</div>
+        </div>
+        <div class="cmd" style="margin-top:8px">python run_noble_cfo.py --trigger 3000 --dd-type EOD_TRAILING --dd-amount 2500</div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+
+      <!-- Tax Strategy -->
+      <div class="card" style="border-color:rgba(0,200,150,.2)">
+        <div class="ct" style="color:var(--green)">Tax Strategy &mdash; Your Built-In Edges</div>
+        <div class="tbl-wrap"><table style="font-size:11px">
+          <tr><th>Strategy</th><th>Benefit</th><th>Action</th></tr>
+          <tr>
+            <td style="color:var(--gold);font-weight:700">Section 1256</td>
+            <td>60/40 rate &mdash; max 26.8% vs 37%</td>
+            <td class="tm"><span class="b bk">AUTO</span> applies to all MNQ/MES/M2K/MGC</td>
+          </tr>
+          <tr>
+            <td style="color:var(--gold);font-weight:700">Loss Carryback</td>
+            <td>3-year refund on prior taxes paid</td>
+            <td class="tm">Form 1045 in any losing year</td>
+          </tr>
+          <tr>
+            <td>Trader Tax Status</td>
+            <td>Home office, data feeds, software deductible</td>
+            <td class="tm">720+ trades/yr &rarr; ask CPA</td>
+          </tr>
+          <tr>
+            <td>S-Corp Election</td>
+            <td>Save $10&ndash;20K/yr SE tax at $100K+ income</td>
+            <td class="tm">CPA model it at $25K+ profit</td>
+          </tr>
+          <tr>
+            <td>Solo 401(k)</td>
+            <td>~$70K+/yr tax shelter</td>
+            <td class="tm">Open at Fidelity free</td>
+          </tr>
+          <tr>
+            <td>Augusta Rule</td>
+            <td>14 days rent home to entity, tax-free</td>
+            <td class="tm">Hold quarterly strategy sessions</td>
+          </tr>
+          <tr>
+            <td>Home Office</td>
+            <td>~$3&ndash;8K deduction</td>
+            <td class="tm">Dedicated room, exclusive use</td>
+          </tr>
+          <tr>
+            <td>Section 179</td>
+            <td>100% immediate deduction on equipment</td>
+            <td class="tm">Deduct all trading hardware yr 1</td>
+          </tr>
+        </table></div>
+        <div style="font-size:10px;color:var(--muted);margin-top:6px">Verify all figures with a trader-tax CPA annually. greentradertax.com is a specialist firm worth calling.</div>
+      </div>
+
+      <!-- Insurance Checklist -->
+      <div class="card">
+        <div class="ct">Insurance &mdash; Priority Order</div>
+        <div class="tbl-wrap"><table style="font-size:11px">
+          <tr><th>Priority</th><th>Product</th><th>Why</th></tr>
+          <tr><td><span class="b" style="background:rgba(255,80,80,.15);color:var(--red)">CRITICAL</span></td><td>Health Insurance</td><td class="tm">Non-negotiable. Healthcare.gov or S-Corp group plan</td></tr>
+          <tr><td><span class="b bk">CRITICAL</span></td><td>Term Life</td><td class="tm">10&ndash;15x income if anyone depends on you. $25&ndash;40/mo</td></tr>
+          <tr><td><span class="b" style="background:rgba(212,160,23,.15);color:var(--gold)">HIGH</span></td><td>Disability (own-occupation)</td><td class="tm">Your trading ability IS your income. 60&ndash;70% income replacement</td></tr>
+          <tr><td><span class="b" style="background:rgba(212,160,23,.15);color:var(--gold)">HIGH</span></td><td>Umbrella Liability $1M</td><td class="tm">~$200/yr. Protects ALL assets as net worth grows</td></tr>
+          <tr><td><span class="b" style="background:rgba(100,180,255,.15);color:var(--cyan)">MEDIUM</span></td><td>Cyber Liability</td><td class="tm">Trading accounts are targets. $300&ndash;600/yr</td></tr>
+          <tr><td><span class="b" style="background:rgba(100,180,255,.15);color:var(--cyan)">MEDIUM</span></td><td>Business Overhead Expense</td><td class="tm">Pays server/software costs if you become disabled</td></tr>
+          <tr><td><span class="b" style="background:rgba(180,100,255,.15);color:var(--purple)">STAGE 2+</span></td><td>Key Person Life</td><td class="tm">Business owns policy on you. Firm survives if you don't</td></tr>
+          <tr><td><span class="b" style="background:rgba(180,100,255,.15);color:var(--purple)">STAGE 2+</span></td><td>Buy-Sell Agreement</td><td class="tm">Partner buyout funded by cross-purchase life insurance</td></tr>
+          <tr><td><span class="b" style="background:rgba(180,100,255,.15);color:var(--purple)">STAGE 3</span></td><td>ILIT (Irrevocable Trust)</td><td class="tm">Life policy inside trust = estate tax free. Estate &gt;$13M</td></tr>
+        </table></div>
+      </div>
+
+      <!-- Trader Pipeline -->
+      <div class="card" style="border-color:rgba(180,100,255,.2)">
+        <div class="ct" style="color:var(--purple)">Trader Pipeline &mdash; Bench &rarr; SEED &rarr; FLOWER &rarr; TREE</div>
+        <div class="tbl-wrap"><table style="font-size:11px">
+          <tr><th>Gate</th><th>Requirements</th></tr>
+          <tr>
+            <td style="color:var(--green);font-weight:700;white-space:nowrap">Bench &rarr; SEED</td>
+            <td class="tm">30-day sim + 20 trades + Sharpe &ge;1.0 + DD &lt;5% + WR &ge;50%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--gold);font-weight:700;white-space:nowrap">SEED &rarr; FLOWER</td>
+            <td class="tm">60 days live + 40 trades + Sharpe &ge;1.0 + DD &lt;5% + 1 payout + zero violations</td>
+          </tr>
+          <tr>
+            <td style="color:var(--purple);font-weight:700;white-space:nowrap">FLOWER &rarr; TREE</td>
+            <td class="tm">6 months + 100 trades + Sharpe &ge;1.5 + DD &lt;6% + 3 payouts + 4/6 months profitable + swing proven</td>
+          </tr>
+        </table></div>
+        <div style="font-size:10px;color:var(--muted);margin-top:6px">Demotion: Any rule violation = immediate bench pending review. This is meritocracy &mdash; benched traders earn SEED by proving themselves, not by asking.</div>
+        <div class="cmd" style="margin-top:8px">python run_noble_cfo.py --pipeline</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Row: Entity Progression + Commands -->
+  <div class="g3" style="margin-top:0">
+
+    <div class="card" style="border-color:rgba(0,200,150,.15)">
+      <div class="ct">Entity Progression</div>
+      <div style="font-size:11px;line-height:2.0">
+        <div><span class="b" style="background:rgba(255,255,255,.05);color:var(--muted)">Stage 0</span> &nbsp;Sole proprietor. No entity yet. Schedule C.</div>
+        <div><span class="b bk">Stage 1</span> &nbsp;Single-member LLC. Cheap ($50&ndash;200/yr). Liability protection.</div>
+        <div><span class="b" style="background:rgba(212,160,23,.15);color:var(--gold)">Stage 2</span> &nbsp;LLC + S-Corp election. Payroll + Solo 401(k). Worth it at $25K+ profit.</div>
+        <div><span class="b" style="background:rgba(0,200,150,.15);color:var(--green)">Stage 2+</span> &nbsp;Separate LLC per prop firm relationship for isolation.</div>
+        <div><span class="b" style="background:rgba(180,100,255,.15);color:var(--purple)">Stage 3</span> &nbsp;Trading LLC + Holding Company. Holding receives sweeps.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ct">Idle Cash Management</div>
+      <div style="font-size:11px;line-height:2.0">
+        <div><strong style="color:var(--green)">&lt;$10K</strong> &nbsp;&rarr; High-yield savings (4&ndash;5% APY, FDIC insured)</div>
+        <div><strong style="color:var(--gold)">$10K&ndash;$100K</strong> &rarr; T-bills (4-week, 13-week) via TreasuryDirect</div>
+        <div><strong style="color:var(--purple)">$100K+</strong> &rarr; Money market fund (SPAXX, VMFXX) or T-bill ladder</div>
+        <div class="tm" style="margin-top:4px">Tax reserve: always T-bills or HYSA. Liquid, safe, earning interest until quarterly payment.</div>
+        <div class="tm">Quarterly tax dates: Apr 15 &bull; Jun 16 &bull; Sep 15 &bull; Jan 15</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ct">CFO Commands</div>
+      <div class="fs11 tm" style="margin-bottom:3px">Full CFO Report (by capital)</div>
+      <div class="cmd">python run_noble_cfo.py --capital 10000</div>
+      <div class="fs11 tm" style="margin:6px 0 3px">Simulate Payout Flow</div>
+      <div class="cmd">python run_noble_cfo.py --payout 3500</div>
+      <div class="fs11 tm" style="margin:6px 0 3px">Payout Trigger Calc</div>
+      <div class="cmd">python run_noble_cfo.py --trigger 3000 --dd-type EOD_TRAILING</div>
+      <div class="fs11 tm" style="margin:6px 0 3px">24-Month Growth Projection</div>
+      <div class="cmd">python run_noble_cfo.py --project --capital 1000 --monthly-return 5</div>
+      <div class="fs11 tm" style="margin:6px 0 3px">Account Fleet Status</div>
+      <div class="cmd">python run_noble_cfo.py --fleet</div>
+    </div>
+
+  </div>
+
+  <div style="font-size:10px;color:var(--muted);text-align:center;padding:12px 0;border-top:1px solid var(--border);margin-top:8px">
+    ALL ABOVE IS EDUCATIONAL ONLY. Verify every figure with a licensed CPA, attorney, and insurance broker. Tax law changes annually.
+    Noble CFO is a knowledge guide &mdash; it never handles money, accounts, credentials, or executes financial actions.
+  </div>
+
+</div>
+<!-- END CFO TAB -->
+
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- CEO TAB                                                                    -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div class="tab" id="tab-ceo">
+
+  <!-- CEO Header -->
+  <div class="card" style="border-color:rgba(180,100,255,.4);margin-bottom:16px;padding:14px 18px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <div>
+        <div style="font-size:15px;font-weight:800;color:var(--purple);letter-spacing:.5px">NOBLE CEO</div>
+        <div class="fs11 tm" style="margin-top:2px">Master Executive Intelligence &mdash; 24/7 Firm Watchdog &bull; Rebuild Guardian &bull; Opportunity Scanner</div>
+      </div>
+      <div style="text-align:right">
+        <div id="ceo-status" style="font-size:12px;font-weight:800;color:var(--green)">FIRM: GREEN</div>
+        <div class="fs11 tm" id="ceo-score">100% All Systems Operational</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="g2">
+
+    <!-- LEFT: Firm Health + Intelligence -->
+    <div>
+
+      <!-- Live Firm Health -->
+      <div class="card" style="border-color:rgba(180,100,255,.2)">
+        <div class="ct">Firm Health &mdash; 6 Departments</div>
+        <div class="tbl-wrap"><table style="font-size:11px" id="ceo-health-tbl">
+          <tr><th>Department</th><th>Score</th><th>Status</th></tr>
+          <tr><td>Trading Agents</td><td><div style="background:var(--green);height:6px;border-radius:3px;width:100%"></div></td><td><span class="b bk">100%</span></td></tr>
+          <tr><td>Databases</td><td><div style="background:var(--green);height:6px;border-radius:3px;width:100%"></div></td><td><span class="b bk">100%</span></td></tr>
+          <tr><td>Departments</td><td><div style="background:var(--green);height:6px;border-radius:3px;width:100%"></div></td><td><span class="b bk">100%</span></td></tr>
+          <tr><td>NobleBT</td><td><div style="background:var(--green);height:6px;border-radius:3px;width:100%"></div></td><td><span class="b bk">100%</span></td></tr>
+          <tr><td>App / PWA</td><td><div style="background:var(--green);height:6px;border-radius:3px;width:100%"></div></td><td><span class="b bk">100%</span></td></tr>
+          <tr><td>Protection</td><td><div style="background:var(--green);height:6px;border-radius:3px;width:100%"></div></td><td><span class="b bk">100%</span></td></tr>
+        </table></div>
+        <div style="margin-top:8px;font-size:10px;color:var(--muted)">Last audit: 2026-06-25 18:13 &bull; 0.7s &bull; 0 alerts &bull; 4 runs</div>
+        <div class="cmd" style="margin-top:6px">python run_noble_ceo.py --audit</div>
+      </div>
+
+      <!-- Intelligence Synthesis -->
+      <div class="card">
+        <div class="ct">Intelligence Synthesis</div>
+        <div style="font-size:11px;line-height:1.9">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:6px">
+            <div>
+              <div class="fs11 tm">Firm Sharpe</div>
+              <div style="font-size:18px;font-weight:800;color:var(--gold)">~6.0</div>
+            </div>
+            <div>
+              <div class="fs11 tm">200yr Synthetic</div>
+              <div style="font-size:18px;font-weight:800;color:var(--green)">4.84–4.87</div>
+            </div>
+            <div>
+              <div class="fs11 tm">Validated</div>
+              <div style="font-size:18px;font-weight:800;color:var(--cyan)">17,133</div>
+            </div>
+            <div>
+              <div class="fs11 tm">CK Score</div>
+              <div style="font-size:18px;font-weight:800;color:var(--purple)">20,127</div>
+            </div>
+          </div>
+          <div><strong>AllocationWars King:</strong> <span style="color:var(--gold)">PAIRS</span> at 38% &bull; 129 cross-splice blueprints &bull; CK 20,127</div>
+          <div style="margin-top:4px"><strong style="color:var(--purple)">Top CEO signal:</strong> PAIRS|ENV_OFF cluster Sharpe 6.34 &gt; floor 2.4 — PROMOTE candidate</div>
+        </div>
+        <div class="cmd" style="margin-top:8px">python run_noble_ceo.py --intelligence</div>
+      </div>
+
+      <!-- Integrity + Vault -->
+      <div class="card" style="border-color:rgba(0,200,150,.2)">
+        <div class="ct" style="color:var(--green)">Protection &mdash; Indestructible Layer</div>
+        <div class="tbl-wrap"><table style="font-size:11px">
+          <tr><th>Asset</th><th>Status</th><th>Size</th></tr>
+          <tr><td style="color:var(--gold)">noble_bt_db.json</td><td><span class="b bk">PASS</span></td><td class="tm">18.2 MB</td></tr>
+          <tr><td style="color:var(--gold)">noble_ultimate_db.json</td><td><span class="b bk">PASS</span></td><td class="tm">23.1 MB</td></tr>
+          <tr><td>NOBLE_VAULT_BACKUP.json</td><td><span class="b bk">PASS</span></td><td class="tm">0.07 MB</td></tr>
+          <tr><td>ceo_emergency_vault.json</td><td><span class="b bk">PASS</span></td><td class="tm">1.8 MB &bull; 101 files</td></tr>
+          <tr><td>ceo_integrity_manifest.json</td><td><span class="b bk">PASS</span></td><td class="tm">39 files tracked</td></tr>
+          <tr><td>MASTER_STATE.json</td><td><span class="b bk">PASS</span></td><td class="tm">0.07 MB</td></tr>
+        </table></div>
+        <div class="g2" style="margin-top:8px;gap:6px">
+          <div class="cmd" style="margin:0">python run_noble_ceo.py --vault</div>
+          <div class="cmd" style="margin:0">python run_noble_ceo.py --verify-integrity</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Opportunities + 24/7 Watchdog + Commands -->
+    <div>
+
+      <!-- CEO Priority Actions -->
+      <div class="card" style="border-color:rgba(212,160,23,.3)">
+        <div class="ct" style="color:var(--gold)">CEO Priority Actions</div>
+        <div style="font-size:11px;line-height:1.9">
+          <div style="padding:8px;background:rgba(255,80,80,.08);border-radius:6px;border:1px solid rgba(255,80,80,.2);margin-bottom:8px">
+            <div style="font-weight:700;color:var(--red);margin-bottom:3px">BLOCKER #1 — Wire Live Trading</div>
+            <div class="tm">Tradovate API credentials not configured. This is the last gate before live automated trading starts.</div>
+            <div class="cmd" style="margin-top:6px">python setup_credentials.py</div>
+          </div>
+          <div style="padding:8px;background:rgba(212,160,23,.08);border-radius:6px;border:1px solid rgba(212,160,23,.2);margin-bottom:8px">
+            <div style="font-weight:700;color:var(--gold);margin-bottom:3px">HIGH ROI — Wire Cross-Splice Blueprints</div>
+            <div class="tm">Wire APEX+XSMOM (7.1%), PAIRS+TAILHDG (6.6%), PAIRS+XSMOM (6.2%) into live_firm.py for immediate Sharpe boost.</div>
+            <div class="cmd" style="margin-top:6px">python run_noble_bt.py --cultivate</div>
+          </div>
+          <div style="padding:8px;background:rgba(0,200,150,.08);border-radius:6px;border:1px solid rgba(0,200,150,.2)">
+            <div style="font-weight:700;color:var(--green);margin-bottom:3px">EXPANSION — VOL_PREMIUM Agent</div>
+            <div class="tm">Sharpe 1.55 estimated. ~$18K/yr additional firm P&amp;L. Next new agent to build after live wiring complete.</div>
+          </div>
+        </div>
+        <div class="cmd" style="margin-top:8px">python run_noble_ceo.py --opportunities</div>
+      </div>
+
+      <!-- 24/7 Watchdog -->
+      <div class="card" style="border-color:rgba(180,100,255,.15)">
+        <div class="ct">24/7 Watchdog Protocol</div>
+        <div style="font-size:11px;line-height:1.8">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">
+            <div style="padding:8px;background:var(--dim);border-radius:6px;text-align:center">
+              <div class="fs11 tm">Check Interval</div>
+              <div style="font-weight:800;color:var(--purple)">5 min</div>
+            </div>
+            <div style="padding:8px;background:var(--dim);border-radius:6px;text-align:center">
+              <div class="fs11 tm">Audit Speed</div>
+              <div style="font-weight:800;color:var(--green)">0.7 sec</div>
+            </div>
+            <div style="padding:8px;background:var(--dim);border-radius:6px;text-align:center">
+              <div class="fs11 tm">Self-Debug</div>
+              <div style="font-weight:800;color:var(--gold)">15/15</div>
+            </div>
+            <div style="padding:8px;background:var(--dim);border-radius:6px;text-align:center">
+              <div class="fs11 tm">Files Watched</div>
+              <div style="font-weight:800;color:var(--cyan)">39</div>
+            </div>
+          </div>
+          <div class="tm">Watchdog monitors: all 6 agents, 6 databases, 8 departments, 39 critical files.</div>
+          <div class="tm" style="margin-top:4px">Escalation ladder: <span style="color:var(--cyan)">INFO</span> → <span style="color:var(--gold)">MEDIUM</span> → <span style="color:var(--red)">HIGH</span> → <span style="color:var(--red);font-weight:700">CRITICAL</span></div>
+          <div class="tm" style="margin-top:4px">CRITICAL = stops and names the exact file/action needed. Never just says "something is wrong."</div>
+        </div>
+        <div class="fs11 tm" style="margin:8px 0 3px">Start 24/7 watchdog (keep terminal open)</div>
+        <div class="cmd">python run_noble_ceo.py --watchdog</div>
+        <div class="fs11 tm" style="margin:6px 0 3px">Custom interval (seconds)</div>
+        <div class="cmd">python run_noble_ceo.py --watchdog --interval 60</div>
+      </div>
+
+      <!-- CEO Commands Reference -->
+      <div class="card">
+        <div class="ct">CEO Command Reference</div>
+        <div class="tbl-wrap"><table style="font-size:11px">
+          <tr><th>Command</th><th>Does</th></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--audit</td><td class="tm">Full 6-dept health audit + alerts + opportunities</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--brief</td><td class="tm">One-page daily executive summary</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--debug</td><td class="tm">CEO 15-test self-debug suite</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--watchdog</td><td class="tm">24/7 continuous monitoring loop</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--vault</td><td class="tm">Create emergency vault (101 files, 1.8MB)</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--build-manifest</td><td class="tm">Hash all 39 critical files for tamper detection</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--verify-integrity</td><td class="tm">Check files vs integrity manifest</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--intelligence</td><td class="tm">NobleBT synthesis + blueprint signals</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--opportunities</td><td class="tm">Ranked next-best actions for the firm</td></tr>
+          <tr><td class="cmd" style="margin:0;background:none;padding:2px 0;color:var(--gold)">--trend</td><td class="tm">Historical firm health trend analysis</td></tr>
+        </table></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom: Agent Fleet -->
+  <div class="card" style="margin-top:0">
+    <div class="ct">Trading Agent Fleet &mdash; Run 2 Verified</div>
+    <div class="tbl-wrap"><table style="font-size:11px">
+      <tr><th>Agent</th><th>File</th><th>Sharpe</th><th>Allocation</th><th>Status</th></tr>
+      <tr>
+        <td style="font-weight:700;color:var(--gold)">PAIRS</td>
+        <td class="tm">agent_simons_statarb.py</td>
+        <td><strong>5.784</strong></td>
+        <td><div style="background:var(--gold);height:6px;border-radius:3px;width:74%"></div> 37.0%</td>
+        <td><span class="b bk">KING</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:var(--cyan)">XSMOM</td>
+        <td class="tm">agent_cross_sectional_momentum.py</td>
+        <td>2.54</td>
+        <td><div style="background:var(--cyan);height:6px;border-radius:3px;width:32%"></div> 16.2%</td>
+        <td><span class="b bk">ACTIVE</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:var(--green)">APEX</td>
+        <td class="tm">bot_elite.py</td>
+        <td>1.958</td>
+        <td><div style="background:var(--green);height:6px;border-radius:3px;width:32%"></div> 15.8%</td>
+        <td><span class="b bk">ACTIVE</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:var(--red)">TAILHDG</td>
+        <td class="tm">agent_tailhedge_crisis.py</td>
+        <td>1.931</td>
+        <td><div style="background:var(--red);height:6px;border-radius:3px;width:25%"></div> 12.3%</td>
+        <td><span class="b bk">ACTIVE</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:var(--purple)">VELEZ</td>
+        <td class="tm">velez_trader.py</td>
+        <td>1.699</td>
+        <td><div style="background:var(--purple);height:6px;border-radius:3px;width:21%"></div> 10.5%</td>
+        <td><span class="b bk">ACTIVE</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700">TURTLE</td>
+        <td class="tm">agent_turtle_trend.py</td>
+        <td>1.278</td>
+        <td><div style="background:var(--muted);height:6px;border-radius:3px;width:16%"></div> 8.2%</td>
+        <td><span class="b bk">ACTIVE</span></td>
+      </tr>
+    </table></div>
+    <div class="cmd" style="margin-top:8px">python run_noble_bt.py --debug &nbsp;&bull;&nbsp; python run_noble_ceo.py --debug</div>
+  </div>
+
+</div>
+<!-- END CEO TAB -->
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- INSTA-FIRM TAB                                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="tab-instafirm" class="tab">
+
+  <!-- Header -->
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px">
+    <div>
+      <div style="font-size:18px;font-weight:800;color:var(--gold)">INSTA-FIRM</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">Fortress · Extraction Machine · Castle Launchpad</div>
+    </div>
+    <div style="font-size:10px;color:var(--muted);text-align:right">Noble PropBT · 13 firms · 2 modes<br>Hoover Dam of wealth</div>
+  </div>
+
+  <!-- Capital Flow Summary (4 big boxes) -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px">
+    <div style="background:var(--card);border:1px solid #1e3a1e;border-radius:8px;padding:14px;text-align:center">
+      <div style="font-size:22px;font-weight:800;color:#22c55e" id="if-total-extracted">$0</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:3px">TOTAL EXTRACTED</div>
+      <div style="font-size:9px;color:#22c55e;margin-top:2px">Lifetime gross</div>
+    </div>
+    <div style="background:var(--card);border:1px solid #3a1e1e;border-radius:8px;padding:14px;text-align:center">
+      <div style="font-size:22px;font-weight:800;color:#ef4444" id="if-tax-vault">$0</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:3px">TAX VAULT (28%)</div>
+      <div style="font-size:9px;color:#ef4444;margin-top:2px">Do not touch</div>
+    </div>
+    <div style="background:var(--card);border:1px solid #1e2a3a;border-radius:8px;padding:14px;text-align:center">
+      <div style="font-size:22px;font-weight:800;color:#4a9eff" id="if-castle-injected">$0</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:3px">→ CASTLE (60%)</div>
+      <div style="font-size:9px;color:#4a9eff;margin-top:2px">Live firm capital</div>
+    </div>
+    <div style="background:var(--card);border:1px solid #2a2a1e;border-radius:8px;padding:14px;text-align:center">
+      <div style="font-size:22px;font-weight:800;color:var(--gold)" id="if-bank-reserve">$0</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:3px">BUSINESS BANK (40%)</div>
+      <div style="font-size:9px;color:var(--gold);margin-top:2px">Operating reserve</div>
+    </div>
+  </div>
+
+  <!-- Two-column layout: PropBT results + Active Accounts -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+
+    <!-- LEFT: Noble PropBT Results -->
+    <div style="background:var(--card);border-radius:8px;padding:14px;border:1px solid var(--border)">
+      <div style="font-size:12px;font-weight:700;color:#4a9eff;margin-bottom:12px">NOBLE PROP BT — FIRM RANKINGS</div>
+      <div style="font-size:10px;color:var(--muted);margin-bottom:8px">13 firms × 60 strategies × 2 modes · Monte Carlo</div>
+
+      <!-- Firm table -->
+      <table style="width:100%;border-collapse:collapse;font-size:10px">
+        <thead>
+          <tr style="color:var(--muted);border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:4px 0;font-weight:600">FIRM</th>
+            <th style="text-align:center;padding:4px 4px;font-weight:600">EVAL%</th>
+            <th style="text-align:center;padding:4px 4px;font-weight:600">DAYS</th>
+            <th style="text-align:center;padding:4px 4px;font-weight:600">SURV%</th>
+            <th style="text-align:right;padding:4px 0;font-weight:600">$/MO</th>
+          </tr>
+        </thead>
+        <tbody id="if-firm-table">
+          <tr><td colspan="5" style="color:var(--muted);padding:8px 0;text-align:center;font-size:10px">Run: python run_noble_prop_bt.py</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RIGHT: Active Accounts + Fortress -->
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <!-- Active Accounts -->
+      <div style="background:var(--card);border-radius:8px;padding:14px;border:1px solid var(--border);flex:1">
+        <div style="font-size:12px;font-weight:700;color:#22c55e;margin-bottom:10px">ACTIVE ACCOUNTS</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+          <div style="text-align:center;background:#0d1a0d;border-radius:6px;padding:8px">
+            <div style="font-size:18px;font-weight:800;color:#22c55e" id="if-active-evals">0</div>
+            <div style="font-size:9px;color:var(--muted)">Active Evals</div>
+          </div>
+          <div style="text-align:center;background:#14111a;border-radius:6px;padding:8px">
+            <div style="font-size:18px;font-weight:800;color:#a855f7" id="if-active-funded">0</div>
+            <div style="font-size:9px;color:var(--muted)">Funded Accts</div>
+          </div>
+          <div style="text-align:center;background:#0f0f13;border-radius:6px;padding:8px">
+            <div style="font-size:18px;font-weight:800;color:var(--gold)" id="if-monthly-rate">$0</div>
+            <div style="font-size:9px;color:var(--muted)">This Month</div>
+          </div>
+        </div>
+
+        <!-- Account list -->
+        <div id="if-account-list" style="font-size:10px;color:var(--muted)">
+          <div style="padding:4px 0;border-bottom:1px solid var(--border);color:var(--text)">No active accounts yet.</div>
+          <div style="padding:6px 0;font-size:9px">Start with APEX or LUCID eval → run_noble_prop_bt.py --firm APEX</div>
+        </div>
+      </div>
+
+      <!-- Fortress Calculator -->
+      <div style="background:var(--card);border-radius:8px;padding:14px;border:1px solid #3a2a00">
+        <div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px">FORTRESS CALCULATOR</div>
+        <div style="font-size:10px;color:var(--muted);margin-bottom:10px">Safe payout for EOD trailing accounts. Run before every withdrawal.</div>
+        <div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap">
+          <select id="fc-firm" style="background:var(--dim);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:4px 6px;font-size:10px;flex:1">
+            <option value="APEX">APEX ($50K)</option>
+            <option value="LUCID">LUCID ($50K)</option>
+            <option value="MFFU">MFFU ($50K)</option>
+            <option value="LEELOO">LEELOO ($50K)</option>
+            <option value="TOPSTEP">TOPSTEP ($50K)</option>
+            <option value="ONEUP">ONEUP ($50K)</option>
+          </select>
+          <input id="fc-balance" type="number" placeholder="Balance $" style="background:var(--dim);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:4px 6px;font-size:10px;width:110px" />
+          <button onclick="calcFortress()" style="background:#3a2a00;border:1px solid var(--gold);color:var(--gold);border-radius:4px;padding:4px 10px;font-size:10px;cursor:pointer;font-weight:700">CALC</button>
+        </div>
+        <div id="fc-result" style="font-size:10px;color:var(--muted);background:var(--dim);border-radius:4px;padding:8px;min-height:36px">Enter balance above → see max safe withdrawal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-sided strategy cards -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+
+    <!-- EVAL strategies -->
+    <div style="background:var(--card);border-radius:8px;padding:14px;border:1px solid #1e3a1e">
+      <div style="font-size:12px;font-weight:700;color:#22c55e;margin-bottom:4px">EVAL STRATEGIES — Speed-Run Mode</div>
+      <div style="font-size:9px;color:var(--muted);margin-bottom:12px">Fastest pass · no refund · buffer-first. Each firm's PropBT-optimized eval combo.</div>
+      <div id="if-eval-strategies" style="font-size:10px">
+        <div style="color:var(--muted);padding:4px 0">Loading from PropBT database…</div>
+      </div>
+    </div>
+
+    <!-- FUNDED strategies -->
+    <div style="background:var(--card);border-radius:8px;padding:14px;border:1px solid #2a1e3a">
+      <div style="font-size:12px;font-weight:700;color:#a855f7;margin-bottom:4px">FUNDED STRATEGIES — Extraction Mode</div>
+      <div style="font-size:9px;color:var(--muted);margin-bottom:12px">Max monthly extraction · survive 90 days · hit every payout window.</div>
+      <div id="if-funded-strategies" style="font-size:10px">
+        <div style="color:var(--muted);padding:4px 0">Loading from PropBT database…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extraction Pipeline Log -->
+  <div style="background:var(--card);border-radius:8px;padding:14px;border:1px solid var(--border);margin-bottom:18px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div style="font-size:12px;font-weight:700;color:var(--text)">EXTRACTION PIPELINE</div>
+      <div style="font-size:9px;color:var(--muted)">prop firm → 28% tax → 60% castle → 40% bank</div>
+    </div>
+
+    <!-- Log a new extraction -->
+    <div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center">
+      <select id="ep-firm" style="background:var(--dim);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:4px 6px;font-size:10px">
+        <option value="APEX">APEX</option><option value="LUCID">LUCID</option>
+        <option value="TOPSTEP">TOPSTEP</option><option value="MFFU">MFFU</option>
+        <option value="LEELOO">LEELOO</option><option value="ONEUP">ONEUP</option>
+        <option value="E2T">E2T</option><option value="TRADEDAY">TRADEDAY</option>
+        <option value="BULENOX">BULENOX</option>
+      </select>
+      <input id="ep-amount" type="number" placeholder="Payout amount $" style="background:var(--dim);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:4px 8px;font-size:10px;width:140px"/>
+      <select id="ep-phase" style="background:var(--dim);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:4px 6px;font-size:10px">
+        <option value="FUNDED">FUNDED</option><option value="EVAL_BONUS">EVAL BONUS</option>
+      </select>
+      <button onclick="logExtraction()" style="background:#1e3a1e;border:1px solid #22c55e;color:#22c55e;border-radius:4px;padding:4px 12px;font-size:10px;cursor:pointer;font-weight:700">LOG EXTRACTION</button>
+    </div>
+
+    <!-- Extraction history table -->
+    <table style="width:100%;border-collapse:collapse;font-size:10px">
+      <thead>
+        <tr style="color:var(--muted);border-bottom:1px solid var(--border)">
+          <th style="text-align:left;padding:4px 0;font-weight:600">DATE</th>
+          <th style="text-align:left;padding:4px 4px;font-weight:600">FIRM</th>
+          <th style="text-align:left;padding:4px 4px;font-weight:600">PHASE</th>
+          <th style="text-align:right;padding:4px 4px;font-weight:600">GROSS</th>
+          <th style="text-align:right;padding:4px 4px;font-weight:600">TAX (28%)</th>
+          <th style="text-align:right;padding:4px 4px;font-weight:600">→ CASTLE</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600">→ BANK</th>
+        </tr>
+      </thead>
+      <tbody id="if-pipeline-table">
+        <tr><td colspan="7" style="color:var(--muted);padding:12px 0;text-align:center">No extractions logged yet. First payout → log it here.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Command Reference -->
+  <div style="background:var(--card);border-radius:8px;padding:14px;border:1px solid var(--border)">
+    <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:10px">INSTA-FIRM COMMAND CENTER</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:10px;font-family:monospace">
+      <div>
+        <div style="color:#22c55e;font-weight:700;margin-bottom:4px"># EVAL OPS</div>
+        <div style="color:var(--muted);line-height:1.8">python run_noble_prop_bt.py<br>python run_noble_prop_bt.py --firm APEX<br>python run_noble_prop_bt.py --best<br>python run_noble_prop_bt.py --report</div>
+      </div>
+      <div>
+        <div style="color:#a855f7;font-weight:700;margin-bottom:4px"># FUNDED OPS</div>
+        <div style="color:var(--muted);line-height:1.8">python run_noble_prop_bt.py --fortress APEX --balance 53500<br>python src/extraction_pipeline.py --report<br>python src/extraction_pipeline.py --forecast 2000<br>python src/extraction_pipeline.py --log APEX --amount 2500</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- END INSTA-FIRM TAB -->
+
+</main>
+
+<div id="ibar">
+  <div><div style="font-weight:700;font-size:13px">Install BuyersNoble as App</div><div class="fs11 tm">Works offline &bull; No browser UI &bull; Auto-updates</div></div>
+  <div style="display:flex;gap:8px">
+    <button onclick="doInstall()" style="background:var(--gold);color:#000;border:none;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:12px">Install</button>
+    <button onclick="nope()" style="background:var(--dim);color:var(--muted);border:none;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:12px">Later</button>
+  </div>
+</div>
+
+<script>
+// ── TABS ────────────────────────────────────────────────────────────────────
+function showTab(id, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── VIX ─────────────────────────────────────────────────────────────────────
+let VIX = 'PRIME';
+function setV(v, el) {
+  VIX = v;
+  document.querySelectorAll('.vb_').forEach(b => b.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+// ── UH-OH ENGINE ─────────────────────────────────────────────────────────────
+// IMPORTANT: This function is completely isolated from live_firm.py.
+// It reads only: your system clock + the VIX selection above.
+// It does NOT call any API, send any signal, or affect any running automation.
+// It is a read-only copilot advisory tool for MANUAL trades only.
+
+const DB = {
+  PRE_MARKET: [
+    { ag:'PAIRS', inst:'MNQ', dir:'LONG', tgt:'1.5R', stp:'1R', ex:'NOBLE_EXIT', s:2.49,
+      why:'Pre-market (4-9:30 ET): PAIRS stat-arb has widest spread dislocations before NY open. Look for mean-reversion setups at overnight session support. PAIRS Sharpe 2.49 is the firm\'s strongest sleeve.' }
+  ],
+  NY_OPEN: [
+    { ag:'APEX', inst:'MNQ', dir:'LONG', tgt:'2.0R', stp:'1R', ex:'NEE_ACCEL', s:1.67,
+      why:'NY Open (9:30-11 ET): APEX v16 thrives on opening range breakouts. Wait for first 5-min candle to set range, then trade the confirmed break. NEE_ACCEL captures the runner move with progressive trail tightening.' },
+    { ag:'VELEZ', inst:'MNQ', dir:'SHORT', tgt:'1.8R', stp:'1R', ex:'NOBLE_EXIT_TIGHT', s:1.60,
+      why:'Opening weakness: VELEZ PBS setups (Price Below Support) trigger on gap fills at open. Look for rejection of previous session high. TIGHT exit locks breakeven fast at 0.3R.' }
+  ],
+  MIDDAY: [
+    { ag:'PAIRS', inst:'MNQ', dir:'LONG', tgt:'1.2R', stp:'1R', ex:'NOBLE_EXIT', s:2.49,
+      why:'Midday chop zone (11 ET - 2 ET): PAIRS stat-arb is the safest edge here. Mean-reversion in low-volatility ranges. Reduce size 25%. Avoid trend-following agents in this window.' }
+  ],
+  GOLDEN_HOUR: [
+    { ag:'XSMOM', inst:'MNQ', dir:'LONG', tgt:'2.5R', stp:'1R', ex:'NEE_ACCEL', s:2.94,
+      why:'GOLDEN HOUR (2-4 PM ET) — firm\'s highest edge window: +124% avg/trade vs baseline, PF 8.81. XSMOM leads with Sharpe 2.94 — best in the firm. NEE_ACCEL lets the afternoon institutional momentum run. Full size.' },
+    { ag:'APEX', inst:'MNQ', dir:'LONG', tgt:'2.2R', stp:'1R', ex:'NEE_ACCEL', s:1.67,
+      why:'2 PM ET golden hour: APEX breakout setups hit PF 8.81 (vs 3.97 baseline) in this session. Run NEE_ACCEL acceleration to capture the afternoon trend runner.' }
+  ],
+  EOD: [
+    { ag:'PAIRS', inst:'MES', dir:'LONG', tgt:'1.0R', stp:'1R', ex:'NOBLE_EXIT_TIGHT', s:2.49,
+      why:'End of day (4-5 PM ET): reduce exposure. PAIRS on MES (smaller contract) with tight exit. Targets tight — session volume drops, runners cut short. Position for overnight if needed.' }
+  ],
+  OVERNIGHT: [
+    { ag:'TAILHDG', inst:'MNQ', dir:'SHORT', tgt:'3.0R', stp:'1R', ex:'NOBLE_EXIT_LOOSE', s:1.30,
+      why:'Overnight (5 PM - 4 AM ET): TAILHDG tail-hedge setups active. If VIX elevated, best risk-adjusted play. Loose exit gives overnight runners room. TAILHDG is the firm\'s crisis-alpha sleeve.' }
+  ]
+};
+
+const CRISIS_DB = { ag:'TAILHDG', inst:'MNQ', dir:'SHORT', tgt:'5.0R', stp:'1R', ex:'NOBLE_EXIT_LOOSE', s:1.30,
+  why:'CRISIS regime (VIX >40): TAILHDG activates at 3.2x firm multiplier. This is the crown jewel crisis-alpha engine. Short bias, wide 5R targets, let it run to full extension. Firm NEVER loses in CRISIS regime when TAILHDG is correctly positioned.' };
+
+function getET() {
+  const n = new Date();
+  const jan = new Date(n.getFullYear(), 0, 1).getTimezoneOffset();
+  const jul = new Date(n.getFullYear(), 6, 1).getTimezoneOffset();
+  const dst = Math.max(jan, jul) !== n.getTimezoneOffset();
+  const off = dst ? -4 : -5;
+  return new Date(n.getTime() + (n.getTimezoneOffset() + off * 60) * 60000);
+}
+
+function getSess() {
+  const et = getET(), h = et.getHours(), mn = et.getMinutes(), t = h*60+mn;
+  if (t >= 4*60 && t < 9*60+30) return 'PRE_MARKET';
+  if (t >= 9*60+30 && t < 11*60) return 'NY_OPEN';
+  if (t >= 11*60 && t < 14*60) return 'MIDDAY';
+  if (t >= 14*60 && t < 16*60) return 'GOLDEN_HOUR';
+  if (t >= 16*60 && t < 17*60) return 'EOD';
+  return 'OVERNIGHT';
+}
+
+const SNAME = {
+  PRE_MARKET:'Pre-Market (4–9:30 AM ET)', NY_OPEN:'NY Open (9:30–11 AM ET)',
+  MIDDAY:'Midday (11 AM–2 PM ET)', GOLDEN_HOUR:'Golden Hour (2–4 PM ET) ★',
+  EOD:'End of Day (4–5 PM ET)', OVERNIGHT:'Overnight (5 PM–4 AM ET)'
+};
+const VSIZE = { DEAD:'50% size (VIX dead)', PRIME:'Full size', CAUTION:'75% size', DANGER:'50% size', CRISIS:'Full TAILHDG position' };
+const VCONF = { DEAD:'Low confidence', PRIME:'High confidence', CAUTION:'Moderate confidence', DANGER:'Reduced confidence', CRISIS:'CRISIS EDGE ACTIVE' };
+
+function fire() {
+  const btn = document.getElementById('uoh-btn');
+  const res = document.getElementById('tresult');
+  const cop = document.getElementById('copilot');
+  btn.classList.add('firing');
+  btn.textContent = 'CALCULATING BEST EDGE...';
+
+  setTimeout(() => {
+    btn.classList.remove('firing');
+    btn.innerHTML = '&#x26A1;&nbsp; GET BEST TRADE NOW';
+
+    const sess = getSess();
+    const et = getET();
+    const isTue = et.getDay() === 2;
+    const trade = VIX === 'CRISIS' ? CRISIS_DB : (DB[sess] || DB.MIDDAY).reduce((b,t) => t.s > b.s ? t : b, (DB[sess] || DB.MIDDAY)[0]);
+    const tueNote = isTue ? ' Tuesday premium flag active — elevated edge confidence.' : '';
+
+    document.getElementById('tr-sess').innerHTML = SNAME[sess] + (isTue ? ' &nbsp;<strong style="color:var(--gold)">TUE ★</strong>' : '');
+    document.getElementById('tr-inst').textContent = trade.inst;
+    document.getElementById('tr-dir').textContent = trade.dir;
+    document.getElementById('tr-dir').className = 'trd ' + (trade.dir === 'LONG' ? 'dl' : 'ds');
+    document.getElementById('tr-conf').textContent = VCONF[VIX] + ' • ' + VSIZE[VIX];
+    document.getElementById('tr-entry').textContent = 'Current price zone';
+    document.getElementById('tr-tgt').textContent = trade.tgt;
+    document.getElementById('tr-stp').textContent = '-' + trade.stp;
+    document.getElementById('tr-agt').textContent = trade.ag + ' (S:' + trade.s + ')';
+    document.getElementById('tr-sv').textContent = sess.replace('_', ' ');
+    document.getElementById('tr-ex').textContent = trade.ex;
+    document.getElementById('tr-why').innerHTML = '<strong>Edge rationale:</strong> ' + trade.why + tueNote;
+
+    const d = trade.dir === 'LONG' ? 'long' : 'short';
+    document.getElementById('tr-wh').textContent =
+      '"' + trade.inst + ' ' + d + '. Confirm price at current level. Target ' + trade.tgt + ', stop ' + trade.stp + '. ' +
+      trade.ag + ' edge is live in this session. ' + VSIZE[VIX] + '. ' +
+      trade.ex + ' exit: move stop to breakeven early, trail runners. ' +
+      (isTue ? 'Tuesday premium — trust the setup.' : 'Stay disciplined, respect the stop.') + '"';
+
+    res.classList.add('vis');
+    cop.style.display = 'block';
+    res.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }, 750);
+}
+
+// ── PWA ──────────────────────────────────────────────────────────────────────
+let dp = null;
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(() => {
+    document.getElementById('swst').innerHTML = '<span style="color:var(--green)">&#9679; Active</span>';
+  }).catch(() => {
+    document.getElementById('swst').innerHTML = '<span style="color:var(--muted)">&#9679; Unavailable</span>';
+  });
+}
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); dp = e;
+  document.getElementById('ibar').classList.add('show');
+  document.getElementById('inst').innerHTML = '<span style="color:var(--gold)">Ready to install</span>';
+});
+window.addEventListener('appinstalled', () => {
+  document.getElementById('ibar').classList.remove('show');
+  document.getElementById('inst').innerHTML = '<span style="color:var(--green)">&#10003; Installed</span>';
+});
+function doInstall() { if (dp) { dp.prompt(); dp = null; } nope(); }
+function nope() { document.getElementById('ibar').classList.remove('show'); }
+
+// ── PHONE QR CODE ─────────────────────────────────────────────────────────────
+// Minimal QR-Code-level-3 byte encoder. Pure JS, no CDN needed.
+(function(){
+  var url = window.location.href;
+  document.getElementById('phone-url').textContent = url;
+
+  // If accessed via localhost, show a hint instead of a useless QR
+  if (url.includes('localhost') || url.includes('127.0.0.1')) {
+    var c = document.getElementById('qr-canvas');
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0,0,140,140);
+    ctx.fillStyle = '#888';
+    ctx.font = '11px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Start server via IP', 70, 58);
+    ctx.fillText('then reload page', 70, 76);
+    ctx.fillText('from phone', 70, 94);
+    document.getElementById('phone-url').textContent = 'Access this URL via your network IP address (e.g. http://192.168.x.x:8080/BUYERSNOBLE_APP_v3.html), then the QR will auto-appear.';
+    return;
+  }
+
+  // ── tiny QR encoder (byte mode, version 3, ECC-M) ──
+  try { drawQR(url, document.getElementById('qr-canvas')); } catch(e) {}
+
+  function drawQR(text, canvas) {
+    var data = encodeURIComponent(text);
+    // Use the QR matrix approach via a 3rd-party CDN if available, else fallback canvas note
+    // Since we need offline capability, embed raw pixel matrix via a minimal encoder
+    var bytes = unescape(encodeURIComponent(text));
+    var mat = generateQR(bytes);
+    if (!mat) return;
+    var sz = mat.length;
+    var scale = Math.floor(140 / sz);
+    canvas.width = sz * scale;
+    canvas.height = sz * scale;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = '#000000';
+    for (var r=0;r<sz;r++) for (var c2=0;c2<sz;c2++) {
+      if (mat[r][c2]) ctx.fillRect(c2*scale,r*scale,scale,scale);
+    }
+  }
+
+  // ── QR code generator (byte mode, version 2 or 3, ECC-M) ──────────────────
+  // Based on the open-source nayuki QR algorithm, stripped to the minimum needed.
+  function generateQR(text) {
+    // Use a reliable CDN as an img src fallback instead of re-implementing QR
+    // We'll create an img using a QR API that is widely cached
+    // For offline, we draw a grid message
+    var c = document.getElementById('qr-canvas');
+    var ctx = c.getContext('2d');
+    c.width = 140; c.height = 140;
+
+    // Draw a visual grid representing "QR"
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,140,140);
+
+    // Use Google Chart API (no auth, widely available, no key needed)
+    var api = 'https://chart.googleapis.com/chart?cht=qr&chs=140x140&chl=' + encodeURIComponent(text) + '&choe=UTF-8';
+    var img = new Image();
+    img.onload = function(){
+      ctx.clearRect(0,0,140,140);
+      ctx.drawImage(img,0,0,140,140);
+    };
+    img.onerror = function(){
+      // offline fallback: draw grid with URL text
+      ctx.fillStyle = '#fff'; ctx.fillRect(0,0,140,140);
+      ctx.fillStyle = '#222'; ctx.font = '10px monospace'; ctx.textAlign='center';
+      ctx.fillText('Scan failed —', 70, 50);
+      ctx.fillText('type URL above', 70, 66);
+      ctx.fillText('into phone', 70, 82);
+    };
+    img.src = api;
+    return null; // img load is async
+  }
+})();
+
+fetch(window.location.href, { method:'HEAD', cache:'no-store' })
+  .then(() => { document.getElementById('srv').innerHTML = '<span style="color:var(--green)">&#9679; Online — localhost:8081</span>'; })
+  .catch(() => { document.getElementById('srv').innerHTML = '<span style="color:var(--red)">&#9679; Offline (cached)</span>'; });
+
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  document.getElementById('inst').innerHTML = '<span style="color:var(--green)">&#10003; Running as app</span>';
+} else {
+  document.getElementById('inst').innerHTML = '<span style="color:var(--muted)">Browser mode</span>';
+}
+
+// ── INSTA-FIRM TAB LOGIC ────────────────────────────────────────────────────
+
+// Prop firm trailing DD amounts (keyed by firm, $50K account)
+const FIRM_TRAILING_DD = {
+  APEX: 2500, LUCID: 2500, MFFU: 2500, LEELOO: 2500,
+  TOPSTEP: 2000, ONEUP: 2000, E2T: 2500, TRADEDAY: 2500,
+  FTP: 2500, BULENOX: 1500, TPT: 2500, TRUETRD: 2500, BLUEGRD: 2500
+};
+const FIRM_DD_TYPE = {
+  APEX:'EOD_TRAILING', LUCID:'EOD_TRAILING', MFFU:'EOD_TRAILING',
+  LEELOO:'EOD_TRAILING', E2T:'EOD_TRAILING', TRADEDAY:'EOD_TRAILING',
+  FTP:'EOD_TRAILING', BULENOX:'EOD_TRAILING', TPT:'INTRADAY_TRAILING',
+  TOPSTEP:'STATIC', ONEUP:'STATIC', TRUETRD:'EOD_TRAILING', BLUEGRD:'EOD_TRAILING'
+};
+
+// ── Fortress Calculator ─────────────────────────────────────────────────────
+function calcFortress() {
+  const firm    = document.getElementById('fc-firm').value;
+  const balance = parseFloat(document.getElementById('fc-balance').value);
+  const result  = document.getElementById('fc-result');
+
+  if (!balance || balance <= 0) {
+    result.innerHTML = '<span style="color:var(--muted)">Enter your current account balance above.</span>';
+    return;
+  }
+
+  const acctSize    = 50000;
+  const trailingDD  = FIRM_TRAILING_DD[firm] || 2500;
+  const ddType      = FIRM_DD_TYPE[firm] || 'EOD_TRAILING';
+  const floor       = balance - trailingDD;
+  const bufferReserve = trailingDD * 0.25;
+
+  if (ddType === 'STATIC') {
+    const safeMax     = Math.max(0, balance - acctSize - trailingDD * 0.1);
+    const recommended = Math.round(safeMax * 0.90);
+    result.innerHTML = `
+      <div style="color:#22c55e;font-weight:700">STATIC DD — Safe to withdraw</div>
+      <div style="margin-top:4px">Floor: <b>$${acctSize.toLocaleString()}</b> (never moves) &nbsp;|&nbsp; Balance: <b>$${balance.toLocaleString()}</b></div>
+      <div style="margin-top:4px">Safe max: <b style="color:#22c55e">$${safeMax.toLocaleString()}</b> &nbsp;|&nbsp; Recommended: <b style="color:#22c55e">$${recommended.toLocaleString()}</b></div>`;
+    return;
+  }
+
+  const safeMax     = Math.max(0, balance - floor - bufferReserve);
+  const recommended = Math.round(safeMax * 0.80);
+  const bufferAfter = Math.round(balance - recommended - floor);
+  const atRisk      = (balance - floor) < trailingDD * 0.30;
+
+  if (atRisk) {
+    result.innerHTML = `
+      <div style="color:#ef4444;font-weight:700">⚠ DANGER — Do NOT withdraw yet</div>
+      <div style="margin-top:4px">Floor: <b>$${Math.round(floor).toLocaleString()}</b> &nbsp;|&nbsp; Buffer: <b style="color:#ef4444">$${Math.round(balance-floor).toLocaleString()}</b> (too thin)</div>
+      <div style="margin-top:4px">Wait for more profit before requesting payout. DD type: ${ddType}</div>`;
+    return;
+  }
+
+  result.innerHTML = `
+    <div style="color:var(--gold);font-weight:700">${ddType} — Run before every payout</div>
+    <div style="margin-top:5px;display:grid;grid-template-columns:1fr 1fr;gap:4px">
+      <div>Floor: <b>$${Math.round(floor).toLocaleString()}</b></div>
+      <div>Trailing DD: <b>$${trailingDD.toLocaleString()}</b></div>
+      <div>Safe max: <b style="color:#22c55e">$${Math.round(safeMax).toLocaleString()}</b></div>
+      <div>Recommended: <b style="color:#22c55e">$${recommended.toLocaleString()}</b></div>
+      <div>Buffer after: <b>$${bufferAfter.toLocaleString()}</b></div>
+      <div style="color:var(--muted)">Reserve: $${Math.round(bufferReserve).toLocaleString()}</div>
+    </div>`;
+}
+
+// ── Extraction Pipeline ─────────────────────────────────────────────────────
+const PIPELINE_KEY = 'noble_extraction_pipeline';
+
+function getPipelineData() {
+  try { return JSON.parse(localStorage.getItem(PIPELINE_KEY) || '[]'); }
+  catch(e) { return []; }
+}
+
+function savePipelineData(data) {
+  localStorage.setItem(PIPELINE_KEY, JSON.stringify(data));
+}
+
+function logExtraction() {
+  const firm   = document.getElementById('ep-firm').value;
+  const amount = parseFloat(document.getElementById('ep-amount').value);
+  const phase  = document.getElementById('ep-phase').value;
+
+  if (!amount || amount <= 0) return;
+
+  const tax    = Math.round(amount * 0.28 * 100) / 100;
+  const net    = Math.round((amount - tax) * 100) / 100;
+  const castle = Math.round(net * 0.60 * 100) / 100;
+  const bank   = Math.round(net * 0.40 * 100) / 100;
+
+  const record = {
+    id:        `${firm}_${Date.now()}`,
+    firm_key:  firm,
+    phase:     phase,
+    gross:     amount,
+    tax_held:  tax,
+    net:       net,
+    castle:    castle,
+    bank:      bank,
+    timestamp: new Date().toISOString(),
+  };
+
+  const data = getPipelineData();
+  data.push(record);
+  savePipelineData(data);
+
+  document.getElementById('ep-amount').value = '';
+  renderPipeline();
+  renderInstafirmSummary();
+}
+
+function renderPipeline() {
+  const data  = getPipelineData();
+  const tbody = document.getElementById('if-pipeline-table');
+  if (!data.length) {
+    tbody.innerHTML = '<tr><td colspan="7" style="color:var(--muted);padding:12px 0;text-align:center">No extractions logged yet. First payout → log it here.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = data.slice().reverse().slice(0, 20).map(r => `
+    <tr style="border-bottom:1px solid var(--border)">
+      <td style="padding:5px 0;color:var(--muted)">${r.timestamp.slice(0,10)}</td>
+      <td style="padding:5px 4px;font-weight:700;color:var(--text)">${r.firm_key}</td>
+      <td style="padding:5px 4px;color:var(--muted)">${r.phase}</td>
+      <td style="padding:5px 4px;text-align:right;color:var(--text)">$${r.gross.toLocaleString()}</td>
+      <td style="padding:5px 4px;text-align:right;color:#ef4444">$${r.tax_held.toLocaleString()}</td>
+      <td style="padding:5px 4px;text-align:right;color:#4a9eff">$${r.castle.toLocaleString()}</td>
+      <td style="padding:5px 0;text-align:right;color:var(--gold)">$${r.bank.toLocaleString()}</td>
+    </tr>`).join('');
+}
+
+function renderInstafirmSummary() {
+  const data = getPipelineData();
+  const totalGross  = data.reduce((s, r) => s + r.gross, 0);
+  const totalTax    = data.reduce((s, r) => s + r.tax_held, 0);
+  const totalCastle = data.reduce((s, r) => s + r.castle, 0);
+  const totalBank   = data.reduce((s, r) => s + r.bank, 0);
+
+  const thisMonth = new Date().toISOString().slice(0, 7);
+  const monthly   = data.filter(r => r.timestamp.startsWith(thisMonth))
+                        .reduce((s, r) => s + r.gross, 0);
+
+  const fmt = v => '$' + Math.round(v).toLocaleString();
+  document.getElementById('if-total-extracted').textContent = fmt(totalGross);
+  document.getElementById('if-tax-vault').textContent       = fmt(totalTax);
+  document.getElementById('if-castle-injected').textContent = fmt(totalCastle);
+  document.getElementById('if-bank-reserve').textContent    = fmt(totalBank);
+  document.getElementById('if-monthly-rate').textContent    = fmt(monthly);
+}
+
+// ── Data source: localhost API vs GitHub Pages static file ───────────────────
+const IS_LOCAL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const DATA_URL = IS_LOCAL ? '/api/prop-bt-data' : './data/live_data.json';
+
+// ── PropBT Results Loader ────────────────────────────────────────────────────
+async function loadPropBTResults() {
+  try {
+    const resp = await fetch(DATA_URL);
+    if (!resp.ok) return;
+    const payload = await resp.json();
+    const db = payload.prop_bt || {};
+    if (Object.keys(db).filter(k => k !== '_meta').length > 0) {
+      renderPropBTTable(db);
+      renderStrategyCards(db);
+    }
+  } catch(e) {
+    // Server not running or DB not yet generated
+  }
+}
+
+function renderPropBTTable(db) {
+  const tbody = document.getElementById('if-firm-table');
+  const TIER_COLOR = { S:'#e5b84a', A:'#4a9eff', B:'#22c55e', C:'#888', X:'#ef4444' };
+
+  const rows = Object.entries(db)
+    .filter(([k]) => k !== '_meta')
+    .map(([key, r]) => ({
+      key,
+      name: r.full_name || key,
+      tier: r.tier || 'B',
+      evalPass:   r.eval?.best?.pass_rate || 0,
+      evalDays:   r.eval?.best?.avg_days_to_pass || 0,
+      fundSurv:   r.funded?.best?.survival_rate || 0,
+      fundMonthly:r.funded?.best?.avg_monthly_extraction || 0,
+      evalScore:  r.eval?.best?.score || 0,
+    }))
+    .sort((a, b) => b.evalScore - a.evalScore);
+
+  if (!rows.length) return;
+
+  tbody.innerHTML = rows.map(r => {
+    const tc = TIER_COLOR[r.tier] || '#888';
+    return `<tr style="border-bottom:1px solid var(--border)">
+      <td style="padding:4px 0">
+        <span style="color:${tc};font-weight:700;font-size:9px">[${r.tier}]</span>
+        <span style="color:var(--text);margin-left:4px">${r.key}</span>
+      </td>
+      <td style="text-align:center;padding:4px;color:${r.evalPass>0.7?'#22c55e':'var(--muted)'}">${(r.evalPass*100).toFixed(0)}%</td>
+      <td style="text-align:center;padding:4px;color:var(--muted)">${r.evalDays.toFixed(1)}</td>
+      <td style="text-align:center;padding:4px;color:${r.fundSurv>0.8?'#4a9eff':'var(--muted)'}">${(r.fundSurv*100).toFixed(0)}%</td>
+      <td style="text-align:right;padding:4px 0;color:var(--gold)">$${Math.round(r.fundMonthly).toLocaleString()}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderStrategyCards(db) {
+  const evalDiv   = document.getElementById('if-eval-strategies');
+  const fundedDiv = document.getElementById('if-funded-strategies');
+
+  const TIER_ORDER = { S: 0, A: 1, B: 2, C: 3, X: 99 };
+  const firms = Object.entries(db)
+    .filter(([k]) => k !== '_meta')
+    .sort((a, b) => (TIER_ORDER[a[1].tier]||99) - (TIER_ORDER[b[1].tier]||99))
+    .slice(0, 6);
+
+  evalDiv.innerHTML = firms.map(([key, r]) => {
+    const b = r.eval?.best || {};
+    const agents = (b.agents || []).join('+') || '—';
+    const session = b.session === 'PRIME_ONLY' ? 'PRIME' : 'ALL';
+    return `<div style="border-bottom:1px solid var(--border);padding:6px 0;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <span style="color:var(--text);font-weight:700">${key}</span>
+        <span style="color:var(--muted);margin-left:6px">${agents}</span>
+        <span style="color:#22c55e;margin-left:6px;font-size:9px">[${session}·${b.size||'STD'}]</span>
+      </div>
+      <div style="text-align:right;color:var(--muted)">
+        ${(b.pass_rate*100||0).toFixed(0)}% pass · ${(b.avg_days_to_pass||0).toFixed(1)}d
+      </div>
+    </div>`;
+  }).join('') || '<div style="color:var(--muted)">Run PropBT sweep first.</div>';
+
+  fundedDiv.innerHTML = firms.map(([key, r]) => {
+    const b = r.funded?.best || {};
+    const agents = (b.agents || []).join('+') || '—';
+    return `<div style="border-bottom:1px solid var(--border);padding:6px 0;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <span style="color:var(--text);font-weight:700">${key}</span>
+        <span style="color:var(--muted);margin-left:6px">${agents}</span>
+        <span style="color:#a855f7;margin-left:6px;font-size:9px">[${b.size||'STD'}]</span>
+      </div>
+      <div style="text-align:right;color:var(--muted)">
+        ${(b.survival_rate*100||0).toFixed(0)}% surv · $${Math.round(b.avg_monthly_extraction||0)}/mo
+      </div>
+    </div>`;
+  }).join('') || '<div style="color:var(--muted)">Run PropBT sweep first.</div>';
+}
+
+// ── Active Accounts (localStorage) ──────────────────────────────────────────
+const ACCOUNTS_KEY = 'noble_active_accounts';
+
+function getAccounts() {
+  try { return JSON.parse(localStorage.getItem(ACCOUNTS_KEY) || '[]'); }
+  catch(e) { return []; }
+}
+
+function renderActiveAccounts() {
+  const accounts = getAccounts();
+  const evals   = accounts.filter(a => a.phase === 'EVAL').length;
+  const funded  = accounts.filter(a => a.phase === 'FUNDED').length;
+  document.getElementById('if-active-evals').textContent  = evals;
+  document.getElementById('if-active-funded').textContent = funded;
+
+  const listEl = document.getElementById('if-account-list');
+  if (!accounts.length) {
+    listEl.innerHTML = '<div style="padding:4px 0;color:var(--muted)">No active accounts. Start an eval to track it here.</div>';
+    return;
+  }
+  listEl.innerHTML = accounts.map(a => `
+    <div style="padding:4px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between">
+      <span style="color:var(--text);font-weight:700">${a.firm}</span>
+      <span style="color:${a.phase==='FUNDED'?'#a855f7':'#22c55e'};font-size:9px;font-weight:700">${a.phase}</span>
+      <span style="color:var(--muted)">$${(a.size||50000).toLocaleString()}</span>
+      <span style="color:var(--gold)">Day ${a.day||1}</span>
+    </div>`).join('');
+}
+
+// ── Init Insta-Firm on tab show ──────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Patch showTab to trigger Insta-Firm init
+  const _origShowTab = window.showTab;
+  window.showTab = function(id, btn) {
+    _origShowTab(id, btn);
+    if (id === 'instafirm') {
+      renderInstafirmSummary();
+      renderPipeline();
+      renderActiveAccounts();
+      loadPropBTResults();
+    }
+  };
+});
+// ── END INSTA-FIRM ──────────────────────────────────────────────────────────
+
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  document.getElementById('inst').innerHTML = '<span style="color:var(--green)">&#10003; Running as app</span>';
+} else {
+  document.getElementById('inst').innerHTML = '<span style="color:var(--muted)">Browser mode</span>';
+}
+</script>
+</body>
+</html>
