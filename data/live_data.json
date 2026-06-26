@@ -1,12 +1,12 @@
 {
-  "synced_at": "2026-06-26T07:42:02.772050",
+  "synced_at": "2026-06-26T07:52:02.749853",
   "prop_bt": {
     "APEX": {
       "firm_key": "APEX",
       "full_name": "Apex Trader Funding",
       "account_size": 50000,
       "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:08:55.218588",
+      "run_timestamp": "2026-06-26T07:22:50.683888",
       "eval": {
         "top_strategies": [
           {
@@ -33,11 +33,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "CAUTIOUS",
-            "score": 1.34258,
+            "score": 1.34256,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 7.0,
-            "avg_buffer_pct": 0.9986,
+            "avg_buffer_pct": 0.9985,
             "n_paths": 3000
           },
           {
@@ -47,11 +47,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "STANDARD",
-            "score": 1.34244,
+            "score": 1.34242,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 7.0,
-            "avg_buffer_pct": 0.9979,
+            "avg_buffer_pct": 0.9978,
             "n_paths": 3000
           },
           {
@@ -63,11 +63,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "CAUTIOUS",
-            "score": 1.34242,
+            "score": 1.34238,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 7.0,
-            "avg_buffer_pct": 0.9978,
+            "avg_buffer_pct": 0.9976,
             "n_paths": 3000
           },
           {
@@ -78,11 +78,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "STANDARD",
-            "score": 1.34238,
+            "score": 1.34236,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 7.0,
-            "avg_buffer_pct": 0.9976,
+            "avg_buffer_pct": 0.9975,
             "n_paths": 3000
           }
         ],
@@ -106,22 +106,6 @@
       "funded": {
         "top_strategies": [
           {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3447.43,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 59.7,
-            "n_paths": 2000
-          },
-          {
             "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
@@ -132,31 +116,41 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3611.44,
+            "avg_monthly_extraction": 3080.12,
+            "avg_monthly_gross": 3422.35,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 58.5,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
-              "VELEZ"
+              "XSMOM",
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3404.71,
+            "avg_monthly_extraction": 3629.19,
+            "avg_monthly_gross": 4032.44,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 55.8,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
+              "APEX",
               "TAILHDG"
             ],
             "session": "PRIME_ONLY",
@@ -164,15 +158,20 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3509.35,
+            "avg_monthly_extraction": 3805.78,
+            "avg_monthly_gross": 4228.65,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 53.8,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
             "agents": [
-              "APEX",
+              "PAIRS",
+              "XSMOM",
               "VELEZ"
             ],
             "session": "PRIME_ONLY",
@@ -180,26 +179,56 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3389.56,
+            "avg_monthly_extraction": 3629.56,
+            "avg_monthly_gross": 4032.85,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 49.2,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3998.17,
+            "avg_monthly_gross": 4442.41,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.3,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3447.43,
+          "avg_monthly_extraction": 3080.12,
+          "avg_monthly_gross": 3422.35,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 59.7,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -219,17 +248,18 @@
         "pros": [
           "Fastest payout in industry (15 min)",
           "No consistency rule \u2014 win big on Tuesdays",
-          "Full automation supported in eval AND funded",
           "100% first $25K profit",
           "Multi-account allowed (stack evals)",
           "Regular promotions (50-90% off)"
         ],
         "cons": [
+          "\u26a0\ufe0f AUTOMATION BANNED \u2014 manual execution only",
           "EOD trailing DD (floor rises with profits)",
           "EOD flat 3:55pm required",
-          "Monthly fee (not one-time)"
+          "Monthly fee (not one-time)",
+          "Manual copier execution adds ~1 tick slippage vs algo"
         ],
-        "noble_strategy": "PHASE 1 (Day 1-3): 50% size. SESSION GOVERNOR only. Let trailing floor settle. Target $150/day. PHASE 2 (Day 4-7): 75% size. Prime sessions only (Tue + Golden Hour). PHASE 3 (Day 8+): Full size on prime sessions. STOP at $300 daily target HIT. Never chase. EOD ALARM at 3:54pm \u2014 FLATTEN EVERYTHING. Expected pass time: 8-12 trading days.",
+        "noble_strategy": "MANUAL EXECUTION MODE (automation banned). Keep live_firm.py running for signals. When signal fires, immediately open Tradovate UI via Uh-Oh button and manually enter. PHASE 1 (Day 1-3): 50% size. SESSION GOVERNOR only. Let trailing floor settle. Target $150/day. PHASE 2 (Day 4-7): 75% size. Prime sessions only (Tue + Golden Hour). PHASE 3 (Day 8+): Full size on prime sessions. STOP at $300 daily target HIT. Never chase. EOD ALARM at 3:54pm \u2014 FLATTEN EVERYTHING. Expected pass time: 8-12 trading days.",
         "best_funded_combo": [
           "APEX",
           "PAIRS",
@@ -246,10 +276,10 @@
     },
     "TOPSTEP": {
       "firm_key": "TOPSTEP",
-      "full_name": "Topstep Funded",
+      "full_name": "Topstep Funded (TopstepX)",
       "account_size": 50000,
-      "dd_type": "STATIC",
-      "run_timestamp": "2026-06-26T03:09:39.535043",
+      "dd_type": "EOD_TRAILING",
+      "run_timestamp": "2026-06-26T07:23:45.361048",
       "eval": {
         "top_strategies": [
           {
@@ -262,11 +292,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.15419,
+            "score": 1.15157,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 9.9,
-            "avg_buffer_pct": 0.9982,
+            "avg_buffer_pct": 0.9851,
             "n_paths": 3000
           },
           {
@@ -278,27 +308,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.13627,
+            "score": 1.12791,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.3,
-            "avg_buffer_pct": 0.9969,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM",
-              "APEX"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.11651,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 10.8,
-            "avg_buffer_pct": 0.9992,
+            "avg_days_to_pass": 10.4,
+            "avg_buffer_pct": 0.9761,
             "n_paths": 3000
           },
           {
@@ -310,11 +324,27 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.11639,
+            "score": 1.11429,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 10.8,
-            "avg_buffer_pct": 0.9986,
+            "avg_buffer_pct": 0.9881,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.11112,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.9,
+            "avg_buffer_pct": 0.9914,
             "n_paths": 3000
           },
           {
@@ -325,11 +355,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.0563,
+            "score": 1.05055,
             "pass_rate": 0.9987,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 12.6,
-            "avg_buffer_pct": 0.9984,
+            "avg_days_to_pass": 12.7,
+            "avg_buffer_pct": 0.9837,
             "n_paths": 3000
           }
         ],
@@ -343,11 +373,11 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 1.15419,
+          "score": 1.15157,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
           "avg_days_to_pass": 9.9,
-          "avg_buffer_pct": 0.9982,
+          "avg_buffer_pct": 0.9851,
           "n_paths": 3000
         },
         "n_combos_tested": 60
@@ -365,9 +395,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3466.36,
+            "avg_monthly_extraction": 3034.32,
+            "avg_monthly_gross": 3371.46,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 36.2,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -381,25 +415,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3627.41,
+            "avg_monthly_extraction": 3166.85,
+            "avg_monthly_gross": 3518.73,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 36.5,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3428.27,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 34.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -413,25 +435,55 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3541.62,
+            "avg_monthly_extraction": 3089.62,
+            "avg_monthly_gross": 3432.91,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 33.8,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
-              "APEX",
-              "VELEZ"
+              "PAIRS",
+              "XSMOM",
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3402.9,
+            "avg_monthly_extraction": 3720.85,
+            "avg_monthly_gross": 4134.27,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 30.9,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3947.98,
+            "avg_monthly_gross": 4386.64,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
@@ -446,35 +498,44 @@
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3466.36,
+          "avg_monthly_extraction": 3034.32,
+          "avg_monthly_gross": 3371.46,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 36.2,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
       },
       "fortress_at_target": {
-        "safe_max": 2800.0,
-        "floor": 48000,
-        "dd_type": "STATIC",
-        "warning": "STATIC DD: Very safe to withdraw. Floor is fixed.",
-        "recommended": 2520.0
+        "safe_max": 1500.0,
+        "recommended": 1200.0,
+        "current_balance": 53000,
+        "floor": 51000,
+        "buffer_after": 800.0,
+        "buffer_reserve": 500.0,
+        "dd_type": "EOD_TRAILING",
+        "at_risk": false,
+        "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
       },
       "firm_notes": {
         "pros": [
-          "STATIC DD \u2014 floor NEVER moves up (safest structure)",
-          "NFA regulated \u2014 most trustworthy payout",
-          "No EOD flat requirement",
-          "Large community and track record",
-          "14-day then weekly payout cadence"
+          "FULL automation allowed (bots, EAs, all platforms)",
+          "NFA regulated \u2014 most trustworthy payout in industry",
+          "No EOD flat \u2014 overnight holds allowed",
+          "100% on first $10K lifetime profit",
+          "Large community and track record"
         ],
         "cons": [
-          "Consistency rule (no single big day > 40%)",
-          "No full automation in funded (signals OK)",
-          "Higher eval cost",
-          "Slower initial payout (14-day)"
+          "EOD trailing MLL (floor rises with EOD balance \u2014 common misconception it is static)",
+          "Winning day requirement (5 days \u00d7 $150+ each)",
+          "First payout $5K cap",
+          "14-day minimum before first payout",
+          "Higher eval cost vs competitors"
         ],
-        "noble_strategy": "CONSISTENCY RULE MANAGEMENT: Total target $3,000. Max one day = $1,200 (40%). Spread across 5+ days. Strategy: $400-600/day \u00d7 6 days = $3,000 total. PERFECT for our system: multiple moderate wins beats one big win. Use PAIRS + XSMOM (high WR = consistent daily gains). Avoid TURTLE (too lumpy, might violate consistency). Expected pass time: 6-9 trading days.",
+        "noble_strategy": "WINNING DAY RULE: Need 5 days each with $150+ net profit. Strategy: 5 winning days \u00d7 $300+ = $1,500+ \u2192 but that is less than $3K target. Need to also HIT the profit target. Run 6-8 trading days. AUTOMATION: Full \u2014 run live_firm.py --prop TOPSTEP directly. No EOD flat = TURTLE can hold overnight trend positions (unique advantage). Spread gains across days. No need to avoid big days \u2014 just need 5 positive days. PAIRS gives daily $200-400 wins = natural fit for winning day requirement. Expected pass time: 6-9 trading days.",
         "best_funded_combo": [
           "TURTLE",
           "PAIRS",
@@ -492,27 +553,12 @@
     },
     "LUCID": {
       "firm_key": "LUCID",
-      "full_name": "Lucid Funded Trader",
+      "full_name": "Lucid Trading (LucidFlex/LucidPro/LucidDirect)",
       "account_size": 50000,
       "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:10:15.451564",
+      "run_timestamp": "2026-06-26T07:24:28.384321",
       "eval": {
         "top_strategies": [
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|STANDARD",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "STANDARD",
-            "score": 1.59962,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9981,
-            "n_paths": 3000
-          },
           {
             "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|STANDARD",
             "agents": [
@@ -573,43 +619,44 @@
             "avg_days_to_pass": 5.0,
             "avg_buffer_pct": 0.9971,
             "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.59938,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 5.0,
+            "avg_buffer_pct": 0.9969,
+            "n_paths": 3000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|STANDARD",
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|STANDARD",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "XSMOM",
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "STANDARD",
-          "score": 1.59962,
+          "score": 1.5996,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
           "avg_days_to_pass": 5.0,
-          "avg_buffer_pct": 0.9981,
+          "avg_buffer_pct": 0.998,
           "n_paths": 3000
         },
         "n_combos_tested": 60
       },
       "funded": {
         "top_strategies": [
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3439.73,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 59.8,
-            "n_paths": 2000
-          },
           {
             "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
@@ -621,25 +668,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3601.66,
+            "avg_monthly_extraction": 3137.17,
+            "avg_monthly_gross": 3485.74,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 58.5,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3400.04,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 55.9,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -653,249 +688,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3533.9,
+            "avg_monthly_extraction": 3082.47,
+            "avg_monthly_gross": 3424.96,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 54.1,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "APEX",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3396.04,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 49.2,
-            "n_paths": 2000
-          }
-        ],
-        "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-          "agents": [
-            "PAIRS",
-            "XSMOM"
-          ],
-          "session": "PRIME_ONLY",
-          "size": "AGGRESSIVE",
-          "score": 1.9,
-          "survival_rate": 1.0,
-          "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3439.73,
-          "payout_hit_rate": 1.0,
-          "avg_payout_events": 59.8,
-          "n_paths": 2000
-        },
-        "n_combos_tested": 60
-      },
-      "fortress_at_target": {
-        "safe_max": 1875.0,
-        "recommended": 1500.0,
-        "current_balance": 50375,
-        "floor": 47875,
-        "buffer_after": 1000.0,
-        "buffer_reserve": 625.0,
-        "dd_type": "EOD_TRAILING",
-        "at_risk": false,
-        "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
-      },
-      "firm_notes": {
-        "pros": [
-          "Best automation support \u2014 full algo allowed eval AND funded",
-          "Near-instant payout (~15 min)",
-          "No consistency rule",
-          "Affordable eval pricing",
-          "Multi-account stacking allowed"
-        ],
-        "cons": [
-          "EOD trailing DD (same risk as APEX)",
-          "EOD flat required 3:55pm",
-          "Smaller firm than APEX/Topstep"
-        ],
-        "noble_strategy": "SAME as APEX protocol but 5-day minimum (faster). Phase 1 (Day 1-2): 50% size, feel out account. Phase 2 (Day 3-5): Full size on Tuesday + Golden Hour only. Best firm for pure automation run \u2014 set live_firm.py prop=LUCID and let it go. Expected pass time: 5-8 trading days.",
-        "best_funded_combo": [
-          "ALL_6"
-        ],
-        "best_instruments": [
-          "NQ",
-          "MNQ/MES_PAIR",
-          "MGC",
-          "ZN"
-        ],
-        "overnight_ok": false
-      }
-    },
-    "MFFU": {
-      "firm_key": "MFFU",
-      "full_name": "My Funded Futures (MFFU)",
-      "account_size": 50000,
-      "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:10:52.084706",
-      "eval": {
-        "top_strategies": [
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|STANDARD",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "STANDARD",
-            "score": 1.59968,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9984,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.59958,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9979,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|STANDARD",
-            "agents": [
-              "PAIRS",
-              "XSMOM",
-              "APEX"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "STANDARD",
-            "score": 1.59954,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9977,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|STANDARD",
-            "agents": [
-              "PAIRS",
-              "XSMOM",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "STANDARD",
-            "score": 1.59942,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9971,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.5994,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.997,
-            "n_paths": 3000
-          }
-        ],
-        "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|STANDARD",
-          "agents": [
-            "PAIRS",
-            "XSMOM"
-          ],
-          "session": "PRIME_ONLY",
-          "size": "STANDARD",
-          "score": 1.59968,
-          "pass_rate": 1.0,
-          "bust_rate": 0.0,
-          "avg_days_to_pass": 5.0,
-          "avg_buffer_pct": 0.9984,
-          "n_paths": 3000
-        },
-        "n_combos_tested": 60
-      },
-      "funded": {
-        "top_strategies": [
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3443.93,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 59.9,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "APEX"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3597.52,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 58.4,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3413.76,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 55.9,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "TAILHDG"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3515.22,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 53.8,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -910,26 +709,76 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 4234.63,
+            "avg_monthly_extraction": 3703.74,
+            "avg_monthly_gross": 4115.27,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 60.3,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3914.7,
+            "avg_monthly_gross": 4349.66,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3698.75,
+            "avg_monthly_gross": 4109.72,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3443.93,
+          "avg_monthly_extraction": 3137.17,
+          "avg_monthly_gross": 3485.74,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 59.9,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -947,17 +796,1091 @@
       },
       "firm_notes": {
         "pros": [
-          "No consistency rule \u2014 win big on prime sessions",
-          "Full automation allowed",
-          "Affordable pricing",
-          "Regular discount promotions"
+          "Best automation support \u2014 full algo eval AND funded",
+          "Near-instant payout (~15 min)",
+          "Zero DLL and zero consistency rule once funded",
+          "Affordable eval pricing",
+          "Multi-account stacking allowed",
+          "EOD only trailing \u2014 most favorable intraday risk"
         ],
         "cons": [
-          "Weekly payout (not same-day)",
-          "EOD trailing DD",
-          "85/15 split (lower than APEX)"
+          "EOD trailing DD (floor rises with profits)",
+          "EOD flat required ~4:45pm",
+          "50% consistency rule during eval (watch big Tuesday wins)",
+          "Smaller firm than APEX/Topstep"
         ],
-        "noble_strategy": "NO CONSISTENCY RULE = our biggest edge here. Wait for a HIGH-IMPACT Tuesday + Golden Hour + HIGH ATR day. Go 1.8x size (stacked multiplier). One big day can pass the eval. Phase 1 (Day 1-4): Scout mode, 50% size, min losses. Day 5+: PRIME DAY only \u2014 full stacked size. Expected pass time: 5-10 trading days.",
+        "noble_strategy": "AUTOMATION: Full \u2014 run live_firm.py --prop LUCID directly. CONSISTENCY WATCH: Any day > 50% of running total triggers a caution. Example: If eval profit = $800 after day 3, next day limit = $400. Phase 1 (Day 1-2): 50% size, let consistency baseline establish. Phase 2 (Day 3-5): Full size on Tuesday + Golden Hour only. Best firm for pure automation run once funded (zero restrictions). Expected pass time: 5-8 trading days.",
+        "best_funded_combo": [
+          "ALL_6"
+        ],
+        "best_instruments": [
+          "NQ",
+          "MNQ/MES_PAIR",
+          "MGC",
+          "ZN"
+        ],
+        "overnight_ok": false
+      }
+    },
+    "MFFU_CORE": {
+      "firm_key": "MFFU_CORE",
+      "full_name": "MFFU Core $50K",
+      "account_size": 50000,
+      "dd_type": "EOD_TRAILING",
+      "run_timestamp": "2026-06-26T07:25:41.734025",
+      "eval": {
+        "top_strategies": [
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.147,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.0,
+            "avg_buffer_pct": 0.985,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.12399,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.5,
+            "avg_buffer_pct": 0.9771,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.11112,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.9,
+            "avg_buffer_pct": 0.9914,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.10663,
+            "pass_rate": 0.9997,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 11.0,
+            "avg_buffer_pct": 0.9883,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.04746,
+            "pass_rate": 0.9987,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 12.8,
+            "avg_buffer_pct": 0.9821,
+            "n_paths": 3000
+          }
+        ],
+        "best": {
+          "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+          "agents": [
+            "PAIRS",
+            "XSMOM",
+            "APEX",
+            "TAILHDG"
+          ],
+          "session": "PRIME_ONLY",
+          "size": "AGGRESSIVE",
+          "score": 1.147,
+          "pass_rate": 1.0,
+          "bust_rate": 0.0,
+          "avg_days_to_pass": 10.0,
+          "avg_buffer_pct": 0.985,
+          "n_paths": 3000
+        },
+        "n_combos_tested": 60
+      },
+      "funded": {
+        "top_strategies": [
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3308.95,
+            "avg_monthly_gross": 4136.19,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3479.7,
+            "avg_monthly_gross": 4349.63,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3300.84,
+            "avg_monthly_gross": 4126.04,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3658.8,
+            "avg_monthly_gross": 4573.5,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.81495,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 2811.01,
+            "avg_monthly_gross": 3513.76,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          }
+        ],
+        "best": {
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+          "agents": [
+            "PAIRS",
+            "XSMOM",
+            "APEX"
+          ],
+          "session": "PRIME_ONLY",
+          "size": "AGGRESSIVE",
+          "score": 1.9,
+          "survival_rate": 1.0,
+          "blowup_rate": 0.0,
+          "avg_monthly_extraction": 3308.95,
+          "avg_monthly_gross": 4136.19,
+          "payout_hit_rate": 1.0,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.8,
+          "acct_size_mult": 1.0,
+          "n_paths": 2000
+        },
+        "n_combos_tested": 60
+      },
+      "fortress_at_target": {
+        "safe_max": 1500.0,
+        "recommended": 1200.0,
+        "current_balance": 53000,
+        "floor": 51000,
+        "buffer_after": 800.0,
+        "buffer_reserve": 500.0,
+        "dd_type": "EOD_TRAILING",
+        "at_risk": false,
+        "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
+      },
+      "firm_notes": {
+        "pros": [
+          "EOD DD (safest MFFU plan)",
+          "Cheapest monthly ($65)",
+          "Webhook automation supported"
+        ],
+        "cons": [
+          "80/20 split (lowest)",
+          "$5K payout cap per cycle",
+          "Monthly subscription",
+          "50% eval consistency rule"
+        ],
+        "noble_strategy": "EOD trailing = safe for our strategy (flat by EOD). CONSISTENCY WATCH: Keep any single day under 50% of running total eval profit. If running at $1,000 total eval profit, limit next day to $500. Target $300-400/day on prime sessions, pass in ~8-10 days. Phase 1 (Day 1-2): 50% size, learn the account. Day 3-8: Full prime session size with consistency governor. Expected pass: 8-12 days.",
+        "best_funded_combo": [],
+        "best_instruments": [],
+        "overnight_ok": false
+      }
+    },
+    "MFFU_RAPID": {
+      "firm_key": "MFFU_RAPID",
+      "full_name": "MFFU Rapid $50K",
+      "account_size": 50000,
+      "dd_type": "INTRADAY_TRAILING",
+      "run_timestamp": "2026-06-26T07:26:45.109826",
+      "eval": {
+        "top_strategies": [
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.07785,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 11.9,
+            "avg_buffer_pct": 0.9985,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.06873,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 12.2,
+            "avg_buffer_pct": 0.9994,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.06254,
+            "pass_rate": 0.9997,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 12.4,
+            "avg_buffer_pct": 0.9988,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.05954,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 12.5,
+            "avg_buffer_pct": 0.9977,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.02541,
+            "pass_rate": 0.999,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 13.8,
+            "avg_buffer_pct": 0.9986,
+            "n_paths": 3000
+          }
+        ],
+        "best": {
+          "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+          "agents": [
+            "PAIRS",
+            "XSMOM",
+            "APEX",
+            "TAILHDG"
+          ],
+          "session": "PRIME_ONLY",
+          "size": "AGGRESSIVE",
+          "score": 1.07785,
+          "pass_rate": 1.0,
+          "bust_rate": 0.0,
+          "avg_days_to_pass": 11.9,
+          "avg_buffer_pct": 0.9985,
+          "n_paths": 3000
+        },
+        "n_combos_tested": 60
+      },
+      "funded": {
+        "top_strategies": [
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3232.08,
+            "avg_monthly_gross": 3591.2,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3182.81,
+            "avg_monthly_gross": 3536.46,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3343.07,
+            "avg_monthly_gross": 3714.53,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.89983,
+            "survival_rate": 0.9995,
+            "blowup_rate": 0.0005,
+            "avg_monthly_extraction": 3152.22,
+            "avg_monthly_gross": 3502.47,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.3,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.81648,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 2814.41,
+            "avg_monthly_gross": 3127.12,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          }
+        ],
+        "best": {
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+          "agents": [
+            "PAIRS",
+            "XSMOM",
+            "APEX"
+          ],
+          "session": "PRIME_ONLY",
+          "size": "AGGRESSIVE",
+          "score": 1.9,
+          "survival_rate": 1.0,
+          "blowup_rate": 0.0,
+          "avg_monthly_extraction": 3232.08,
+          "avg_monthly_gross": 3591.2,
+          "payout_hit_rate": 1.0,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
+          "n_paths": 2000
+        },
+        "n_combos_tested": 60
+      },
+      "fortress_at_target": {
+        "safe_max": 1875.0,
+        "recommended": 1500.0,
+        "current_balance": 53000,
+        "floor": 50500,
+        "buffer_after": 1000.0,
+        "buffer_reserve": 625.0,
+        "dd_type": "INTRADAY_TRAILING",
+        "at_risk": false,
+        "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
+      },
+      "firm_notes": {
+        "pros": [
+          "NO payout ceiling \u2014 extract unlimited per cycle",
+          "90/10 split (best in MFFU family)",
+          "No consistency rule",
+          "No daily loss limit",
+          "One-time purchase available (not just monthly)"
+        ],
+        "cons": [
+          "INTRADAY TRAILING DD \u2014 hardest structure",
+          "Floor moves with unrealized P&L peaks",
+          "Requires IntradayGuardian to trade safely"
+        ],
+        "noble_strategy": "INTRADAY TRAILING = IntradayGuardian REQUIRED. PAIRS HEDGE ADVANTAGE: stat-arb uses 45% buffer of directional. $2,500 DD effectively = $5,555 for PAIRS strategy. Protocol: prime session only, bank $375 daily target then STOP. Never let a winner give back >30% of daily high. Guardian enforces size cascade if buffer compresses. Expected pass: 8-12 days (more conservative than EOD firms). UPSIDE: no payout cap \u2014 extract full profits each cycle.",
+        "best_funded_combo": [],
+        "best_instruments": [],
+        "overnight_ok": false
+      }
+    },
+    "MFFU_PRO": {
+      "firm_key": "MFFU_PRO",
+      "full_name": "MFFU Pro $50K",
+      "account_size": 50000,
+      "dd_type": "EOD_TRAILING",
+      "run_timestamp": "2026-06-26T07:27:38.331856",
+      "eval": {
+        "top_strategies": [
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.15223,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 9.9,
+            "avg_buffer_pct": 0.9884,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.12867,
+            "pass_rate": 0.9997,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.4,
+            "avg_buffer_pct": 0.9805,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.11543,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.8,
+            "avg_buffer_pct": 0.9938,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.11096,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.9,
+            "avg_buffer_pct": 0.9906,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.05127,
+            "pass_rate": 0.9993,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 12.7,
+            "avg_buffer_pct": 0.9861,
+            "n_paths": 3000
+          }
+        ],
+        "best": {
+          "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+          "agents": [
+            "PAIRS",
+            "XSMOM",
+            "APEX",
+            "TAILHDG"
+          ],
+          "session": "PRIME_ONLY",
+          "size": "AGGRESSIVE",
+          "score": 1.15223,
+          "pass_rate": 1.0,
+          "bust_rate": 0.0,
+          "avg_days_to_pass": 9.9,
+          "avg_buffer_pct": 0.9884,
+          "n_paths": 3000
+        },
+        "n_combos_tested": 60
+      },
+      "funded": {
+        "top_strategies": [
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3144.09,
+            "avg_monthly_gross": 3493.44,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3069.92,
+            "avg_monthly_gross": 3411.02,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3719.87,
+            "avg_monthly_gross": 4133.19,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3886.07,
+            "avg_monthly_gross": 4317.85,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3707.34,
+            "avg_monthly_gross": 4119.26,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          }
+        ],
+        "best": {
+          "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+          "agents": [
+            "PAIRS",
+            "APEX"
+          ],
+          "session": "PRIME_ONLY",
+          "size": "AGGRESSIVE",
+          "score": 1.9,
+          "survival_rate": 1.0,
+          "blowup_rate": 0.0,
+          "avg_monthly_extraction": 3144.09,
+          "avg_monthly_gross": 3493.44,
+          "payout_hit_rate": 1.0,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
+          "n_paths": 2000
+        },
+        "n_combos_tested": 60
+      },
+      "fortress_at_target": {
+        "safe_max": 1875.0,
+        "recommended": 1500.0,
+        "current_balance": 53000,
+        "floor": 50500,
+        "buffer_after": 1000.0,
+        "buffer_reserve": 625.0,
+        "dd_type": "EOD_TRAILING",
+        "at_risk": false,
+        "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
+      },
+      "firm_notes": {
+        "pros": [
+          "90/10 split with NO payout ceiling",
+          "EOD trailing (safer than Rapid)",
+          "No consistency rule",
+          "Larger account sizes available ($150K)"
+        ],
+        "cons": [
+          "Most expensive MFFU plan",
+          "Monthly fee option is steep"
+        ],
+        "noble_strategy": "Best of both worlds: EOD trailing + 90/10 + no cap. Same pass strategy as MFFU Core but with more room. Recommend one-time purchase ($629) over monthly ($219/mo). One-time pays for itself after 3 months funded.",
+        "best_funded_combo": [],
+        "best_instruments": [],
+        "overnight_ok": false
+      }
+    },
+    "MFFU": {
+      "firm_key": "MFFU",
+      "full_name": "My Funded Futures (MFFU) \u2014 see MFFU_CORE / MFFU_RAPID / MFFU_PRO",
+      "account_size": 50000,
+      "dd_type": "EOD_TRAILING",
+      "run_timestamp": "2026-06-26T07:28:32.881088",
+      "eval": {
+        "top_strategies": [
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.15165,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 9.9,
+            "avg_buffer_pct": 0.9855,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.12803,
+            "pass_rate": 0.9997,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.4,
+            "avg_buffer_pct": 0.9773,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.11511,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.8,
+            "avg_buffer_pct": 0.9922,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.1105,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.9,
+            "avg_buffer_pct": 0.9883,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.0537,
+            "pass_rate": 0.9997,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 12.6,
+            "avg_buffer_pct": 0.9834,
+            "n_paths": 3000
+          }
+        ],
+        "best": {
+          "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+          "agents": [
+            "PAIRS",
+            "XSMOM",
+            "APEX",
+            "TAILHDG"
+          ],
+          "session": "PRIME_ONLY",
+          "size": "AGGRESSIVE",
+          "score": 1.15165,
+          "pass_rate": 1.0,
+          "bust_rate": 0.0,
+          "avg_days_to_pass": 9.9,
+          "avg_buffer_pct": 0.9855,
+          "n_paths": 3000
+        },
+        "n_combos_tested": 60
+      },
+      "funded": {
+        "top_strategies": [
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3318.71,
+            "avg_monthly_gross": 4148.39,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3498.32,
+            "avg_monthly_gross": 4372.9,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3309.31,
+            "avg_monthly_gross": 4136.64,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3652.29,
+            "avg_monthly_gross": 4565.36,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.8159,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 2813.11,
+            "avg_monthly_gross": 3516.39,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          }
+        ],
+        "best": {
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+          "agents": [
+            "PAIRS",
+            "XSMOM",
+            "APEX"
+          ],
+          "session": "PRIME_ONLY",
+          "size": "AGGRESSIVE",
+          "score": 1.9,
+          "survival_rate": 1.0,
+          "blowup_rate": 0.0,
+          "avg_monthly_extraction": 3318.71,
+          "avg_monthly_gross": 4148.39,
+          "payout_hit_rate": 1.0,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.8,
+          "acct_size_mult": 1.0,
+          "n_paths": 2000
+        },
+        "n_combos_tested": 60
+      },
+      "fortress_at_target": {
+        "safe_max": 1500.0,
+        "recommended": 1200.0,
+        "current_balance": 53000,
+        "floor": 51000,
+        "buffer_after": 800.0,
+        "buffer_reserve": 500.0,
+        "dd_type": "EOD_TRAILING",
+        "at_risk": false,
+        "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
+      },
+      "firm_notes": {
+        "pros": [
+          "See MFFU_CORE"
+        ],
+        "cons": [
+          "See MFFU_CORE"
+        ],
+        "noble_strategy": "See MFFU_CORE entry.",
         "best_funded_combo": [
           "APEX",
           "TURTLE",
@@ -975,8 +1898,8 @@
       "firm_key": "LEELOO",
       "full_name": "Leeloo Trading",
       "account_size": 50000,
-      "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:11:32.484789",
+      "dd_type": "INTRADAY_TRAILING",
+      "run_timestamp": "2026-06-26T07:29:37.184892",
       "eval": {
         "top_strategies": [
           {
@@ -989,11 +1912,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.56404,
+            "score": 1.56408,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 5.2,
-            "avg_buffer_pct": 0.9933,
+            "avg_buffer_pct": 0.9935,
             "n_paths": 3000
           },
           {
@@ -1005,11 +1928,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.54832,
+            "score": 1.5484,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 5.3,
-            "avg_buffer_pct": 0.9963,
+            "avg_buffer_pct": 0.9967,
             "n_paths": 3000
           },
           {
@@ -1021,11 +1944,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.54806,
+            "score": 1.54802,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 5.3,
-            "avg_buffer_pct": 0.995,
+            "avg_buffer_pct": 0.9948,
             "n_paths": 3000
           },
           {
@@ -1037,26 +1960,26 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.54694,
+            "score": 1.54692,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 5.3,
-            "avg_buffer_pct": 0.9894,
+            "avg_buffer_pct": 0.9893,
             "n_paths": 3000
           },
           {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
-              "XSMOM"
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.48883,
+            "score": 1.48805,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 5.7,
-            "avg_buffer_pct": 0.9968,
+            "avg_buffer_pct": 0.9929,
             "n_paths": 3000
           }
         ],
@@ -1070,33 +1993,17 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 1.56404,
+          "score": 1.56408,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
           "avg_days_to_pass": 5.2,
-          "avg_buffer_pct": 0.9933,
+          "avg_buffer_pct": 0.9935,
           "n_paths": 3000
         },
         "n_combos_tested": 60
       },
       "funded": {
         "top_strategies": [
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3440.02,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 59.7,
-            "n_paths": 2000
-          },
           {
             "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
@@ -1108,41 +2015,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3613.35,
+            "avg_monthly_extraction": 3007.86,
+            "avg_monthly_gross": 3342.07,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 58.5,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3395.68,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 55.8,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "TAILHDG"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3532.64,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 54.1,
+            "avg_payout_events": 12.3,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -1157,26 +2036,98 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 4243.13,
+            "avg_monthly_extraction": 3574.18,
+            "avg_monthly_gross": 3971.31,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 60.3,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3744.01,
+            "avg_monthly_gross": 4160.01,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.3,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3567.12,
+            "avg_monthly_gross": 3963.46,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3953.75,
+            "avg_monthly_gross": 4393.05,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3440.02,
+          "avg_monthly_extraction": 3007.86,
+          "avg_monthly_gross": 3342.07,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 59.7,
+          "avg_payout_events": 12.3,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -1188,24 +2139,26 @@
         "floor": 48625,
         "buffer_after": 1000.0,
         "buffer_reserve": 625.0,
-        "dd_type": "EOD_TRAILING",
+        "dd_type": "INTRADAY_TRAILING",
         "at_risk": false,
         "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
       },
       "firm_notes": {
         "pros": [
           "Generous reset policy (multiple free resets)",
-          "No consistency rule",
-          "90/10 payout split",
-          "Good instruments list (includes MNQ)",
-          "Active community + Discord"
+          "100% first $12.5K profits, then 90/10",
+          "Good instruments list (includes SIL silver)",
+          "Active community + Discord",
+          "30% funded consistency only (not eval)"
         ],
         "cons": [
+          "\u26a0\ufe0f AUTOMATION BANNED \u2014 manual execution only",
+          "INTRADAY TRAILING DD \u2014 hardest structure (unrealized P&L moves floor)",
           "Higher profit targets vs daily loss (3:1 ratio)",
-          "EOD trailing DD",
-          "Longer time to pass due to higher targets"
+          "Longer time to pass due to higher targets",
+          "Manual copy adds execution risk"
         ],
-        "noble_strategy": "HIGH PROFIT TARGET = need more prime sessions. Do NOT try to pass in one big day. Spread across 10+ days. Use the free reset generously \u2014 if first 3 days go wrong, reset immediately. Strategy: $250/day \u00d7 5 days = $1,250 (less than target). Need $750+ on remaining days. Save Tuesday for the push. Expected pass time: 10-15 trading days.",
+        "noble_strategy": "MANUAL EXECUTION + INTRADAY TRAILING = double difficulty. Use live_firm.py signals \u2192 manually copy to Tradovate UI (Uh-Oh button). INTRADAY TRAILING: Never let a position go up $500 then give it back. Floor rises with unrealized gains. Exit winners quickly (no trailing). Do NOT try to pass in one big day. Spread across 10-15 days. Use the free reset: if first 3 days go wrong, reset immediately. Strategy: $200/day \u00d7 6 days = $1,200 (less than target). Need Tuesday golden-hour push. Expected pass time: 12-18 trading days.",
         "best_funded_combo": [
           "PAIRS",
           "APEX",
@@ -1223,8 +2176,8 @@
       "firm_key": "ONEUP",
       "full_name": "OneUp Trader",
       "account_size": 50000,
-      "dd_type": "STATIC",
-      "run_timestamp": "2026-06-26T03:12:21.251463",
+      "dd_type": "INTRADAY_TRAILING",
+      "run_timestamp": "2026-06-26T07:30:33.196386",
       "eval": {
         "top_strategies": [
           {
@@ -1237,11 +2190,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.12018,
+            "score": 1.11752,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 10.7,
-            "avg_buffer_pct": 0.9981,
+            "avg_buffer_pct": 0.9848,
             "n_paths": 3000
           },
           {
@@ -1253,11 +2206,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.10483,
+            "score": 1.10019,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 11.1,
-            "avg_buffer_pct": 0.9971,
+            "avg_buffer_pct": 0.9739,
             "n_paths": 3000
           },
           {
@@ -1269,11 +2222,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.10165,
+            "score": 1.10005,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 11.2,
-            "avg_buffer_pct": 0.9993,
+            "avg_buffer_pct": 0.9913,
             "n_paths": 3000
           },
           {
@@ -1285,11 +2238,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.09799,
+            "score": 1.09585,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 11.3,
-            "avg_buffer_pct": 0.9988,
+            "avg_buffer_pct": 0.9881,
             "n_paths": 3000
           },
           {
@@ -1300,11 +2253,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.0512,
+            "score": 1.04812,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 12.8,
-            "avg_buffer_pct": 0.9982,
+            "avg_buffer_pct": 0.9828,
             "n_paths": 3000
           }
         ],
@@ -1318,11 +2271,11 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 1.12018,
+          "score": 1.11752,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
           "avg_days_to_pass": 10.7,
-          "avg_buffer_pct": 0.9981,
+          "avg_buffer_pct": 0.9848,
           "n_paths": 3000
         },
         "n_combos_tested": 60
@@ -1340,9 +2293,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3467.88,
+            "avg_monthly_extraction": 3019.16,
+            "avg_monthly_gross": 3354.62,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 36.2,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -1356,25 +2313,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3623.37,
+            "avg_monthly_extraction": 3159.0,
+            "avg_monthly_gross": 3510.0,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 36.5,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3413.88,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 33.9,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -1388,25 +2333,55 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3526.99,
+            "avg_monthly_extraction": 3078.28,
+            "avg_monthly_gross": 3420.31,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 33.7,
+            "avg_payout_events": 12.3,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
-              "APEX",
-              "VELEZ"
+              "PAIRS",
+              "XSMOM",
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3389.51,
+            "avg_monthly_extraction": 3735.63,
+            "avg_monthly_gross": 4150.69,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 30.7,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3926.03,
+            "avg_monthly_gross": 4362.26,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
@@ -1421,33 +2396,44 @@
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3467.88,
+          "avg_monthly_extraction": 3019.16,
+          "avg_monthly_gross": 3354.62,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 36.2,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
       },
       "fortress_at_target": {
-        "safe_max": 2800.0,
-        "floor": 48000,
-        "dd_type": "STATIC",
-        "warning": "STATIC DD: Very safe to withdraw. Floor is fixed.",
-        "recommended": 2520.0
+        "safe_max": 1500.0,
+        "recommended": 1200.0,
+        "current_balance": 53000,
+        "floor": 51000,
+        "buffer_after": 800.0,
+        "buffer_reserve": 500.0,
+        "dd_type": "INTRADAY_TRAILING",
+        "at_risk": false,
+        "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
       },
       "firm_notes": {
         "pros": [
-          "Static-like DD structure (very forgiving)",
-          "No EOD flat requirement",
-          "No consistency rule",
-          "Good scaling plan"
+          "FULL automation allowed (EAs, algos)",
+          "No EOD flat \u2014 overnight trend holds OK",
+          "100% first $10K per payout cycle",
+          "Trailing stops at initial balance (protection below, not above)",
+          "No consistency rule once funded"
         ],
         "cons": [
+          "INTRADAY TRAILING including unrealized P&L (same as TPT/MFFU_RAPID)",
           "30-day hold before first payout",
-          "10 min trading days",
-          "80/20 initial split"
+          "10+ minimum trading days",
+          "Rithmic only (no Tradovate)",
+          "Special eval consistency rule (3 best days check)"
         ],
-        "noble_strategy": "STATIC-LIKE DD = low risk of accidental bust. Take full 10+ days at measured pace. $300/day average = pass in 10 days. No EOD flat = can hold TURTLE trend positions overnight. Use TURTLE agent here \u2014 longer holds are OK. Expected pass time: 10-15 trading days.",
+        "noble_strategy": "AUTOMATION: Full \u2014 run live_firm.py directly. INTRADAY TRAILING: IntradayGuardian recommended (same as MFFU_RAPID). No EOD flat = TURTLE can hold overnight trend positions. EVAL CONSISTENCY: 3 best days must collectively account for \u226580% of best day. This is unusual \u2014 it means spread required across multiple positive days. Strategy: $200-300/day \u00d7 10 days. No EOD flat = unique TURTLE overnight carry advantage here. Expected pass time: 10-15 trading days.",
         "best_funded_combo": [
           "TURTLE",
           "PAIRS",
@@ -1467,7 +2453,7 @@
       "full_name": "Earn2Trade \u2014 Gauntlet Mini",
       "account_size": 50000,
       "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:13:10.390316",
+      "run_timestamp": "2026-06-26T07:38:46.426293",
       "eval": {
         "top_strategies": [
           {
@@ -1479,11 +2465,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 0.9982,
+            "score": 0.99824,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 15.0,
-            "avg_buffer_pct": 0.991,
+            "avg_buffer_pct": 0.9912,
             "n_paths": 3000
           },
           {
@@ -1495,11 +2481,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 0.99726,
+            "score": 0.99738,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 15.0,
-            "avg_buffer_pct": 0.9863,
+            "avg_buffer_pct": 0.9869,
             "n_paths": 3000
           },
           {
@@ -1512,26 +2498,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 0.99646,
+            "score": 0.99644,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 15.0,
-            "avg_buffer_pct": 0.9823,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 0.99449,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 15.2,
-            "avg_buffer_pct": 0.9922,
+            "avg_buffer_pct": 0.9822,
             "n_paths": 3000
           },
           {
@@ -1543,11 +2514,26 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 0.99446,
+            "score": 0.9948,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 15.0,
-            "avg_buffer_pct": 0.9723,
+            "avg_buffer_pct": 0.974,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 0.99451,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 15.2,
+            "avg_buffer_pct": 0.9923,
             "n_paths": 3000
           }
         ],
@@ -1560,11 +2546,11 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 0.9982,
+          "score": 0.99824,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
           "avg_days_to_pass": 15.0,
-          "avg_buffer_pct": 0.991,
+          "avg_buffer_pct": 0.9912,
           "n_paths": 3000
         },
         "n_combos_tested": 60
@@ -1572,19 +2558,88 @@
       "funded": {
         "top_strategies": [
           {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
-              "XSMOM"
+              "XSMOM",
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3448.14,
+            "avg_monthly_extraction": 3290.77,
+            "avg_monthly_gross": 4113.46,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 50.2,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3458.06,
+            "avg_monthly_gross": 4322.57,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3283.87,
+            "avg_monthly_gross": 4104.84,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3642.09,
+            "avg_monthly_gross": 4552.62,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -1595,77 +2650,38 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.9,
+            "score": 1.80118,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3590.17,
+            "avg_monthly_extraction": 2780.39,
+            "avg_monthly_gross": 3475.49,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 48.7,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3397.5,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 45.2,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "TAILHDG"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3523.24,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 43.9,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "APEX",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3378.89,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 39.3,
+            "avg_payout_events": 12.3,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "XSMOM",
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3448.14,
+          "avg_monthly_extraction": 3290.77,
+          "avg_monthly_gross": 4113.46,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 50.2,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.8,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -1685,16 +2701,18 @@
         "pros": [
           "Longer runway (15 min days) \u2014 harder to blow up on one bad day",
           "Good for beginners \u2014 more time to find rhythm",
-          "Gauntlet Mini is well-designed eval structure"
+          "Gauntlet Mini is well-designed eval structure",
+          "30% rule waived once funded"
         ],
         "cons": [
           "High profit targets relative to daily limit",
           "Monthly initial payout (slow)",
           "More expensive eval",
           "80/20 split",
-          "Long min days requirement"
+          "Long min days requirement",
+          "Funded accounts switch to INTRADAY trailing (harder)"
         ],
-        "noble_strategy": "LONG GAME strategy. 15 days minimum = no rushing. $200/day average \u00d7 15 days = $3,000. Steady wins. Perfect for PAIRS agent (73% WR = consistent daily gains). Use bad weather days (when NQ quiet) to sit out. Expected pass time: 15-20 trading days.",
+        "noble_strategy": "LONG GAME strategy. 15 days minimum = no rushing. CONSISTENCY: Keep any single day under 30% of running eval profit. Example: running $1,500 eval profit \u2192 next day max = $450. $200/day average \u00d7 15 days = $3,000. Steady wins. Perfect for PAIRS agent (73% WR = consistent daily gains). Use bad weather days (when NQ quiet) to sit out. Expected pass time: 15-20 trading days.",
         "best_funded_combo": [],
         "best_instruments": [
           "NQ",
@@ -1707,8 +2725,8 @@
       "firm_key": "TRADEDAY",
       "full_name": "TradeDay",
       "account_size": 50000,
-      "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:13:57.648830",
+      "dd_type": "STATIC",
+      "run_timestamp": "2026-06-26T07:39:44.851309",
       "eval": {
         "top_strategies": [
           {
@@ -1721,11 +2739,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.15237,
-            "pass_rate": 1.0,
+            "score": 1.11629,
+            "pass_rate": 0.9997,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 9.9,
-            "avg_buffer_pct": 0.9891,
+            "avg_days_to_pass": 10.8,
+            "avg_buffer_pct": 0.9987,
             "n_paths": 3000
           },
           {
@@ -1737,11 +2755,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.12901,
-            "pass_rate": 1.0,
+            "score": 1.08705,
+            "pass_rate": 0.999,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.4,
-            "avg_buffer_pct": 0.9816,
+            "avg_days_to_pass": 11.6,
+            "avg_buffer_pct": 0.9976,
             "n_paths": 3000
           },
           {
@@ -1753,11 +2771,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.1115,
-            "pass_rate": 1.0,
+            "score": 1.0842,
+            "pass_rate": 0.9993,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.9,
-            "avg_buffer_pct": 0.9933,
+            "avg_days_to_pass": 11.7,
+            "avg_buffer_pct": 0.9993,
             "n_paths": 3000
           },
           {
@@ -1769,11 +2787,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.11086,
-            "pass_rate": 1.0,
+            "score": 1.08088,
+            "pass_rate": 0.9993,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.9,
-            "avg_buffer_pct": 0.9901,
+            "avg_days_to_pass": 11.8,
+            "avg_buffer_pct": 0.999,
             "n_paths": 3000
           },
           {
@@ -1784,11 +2802,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.05147,
-            "pass_rate": 0.9997,
+            "score": 1.02902,
+            "pass_rate": 0.996,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 12.7,
-            "avg_buffer_pct": 0.9863,
+            "avg_days_to_pass": 13.6,
+            "avg_buffer_pct": 0.9987,
             "n_paths": 3000
           }
         ],
@@ -1802,11 +2820,11 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 1.15237,
-          "pass_rate": 1.0,
+          "score": 1.11629,
+          "pass_rate": 0.9997,
           "bust_rate": 0.0,
-          "avg_days_to_pass": 9.9,
-          "avg_buffer_pct": 0.9891,
+          "avg_days_to_pass": 10.8,
+          "avg_buffer_pct": 0.9987,
           "n_paths": 3000
         },
         "n_combos_tested": 60
@@ -1814,19 +2832,88 @@
       "funded": {
         "top_strategies": [
           {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
-              "XSMOM"
+              "XSMOM",
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3447.76,
+            "avg_monthly_extraction": 3506.65,
+            "avg_monthly_gross": 4125.47,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 50.4,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.85,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3666.51,
+            "avg_monthly_gross": 4313.54,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.3,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.85,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3485.05,
+            "avg_monthly_gross": 4100.06,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.85,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3883.16,
+            "avg_monthly_gross": 4568.42,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.85,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -1837,105 +2924,65 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.9,
+            "score": 1.88606,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3609.32,
+            "avg_monthly_extraction": 2969.03,
+            "avg_monthly_gross": 3492.98,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 48.8,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3395.95,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 45.1,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "TAILHDG"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3519.15,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 43.8,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "APEX",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3368.61,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 39.3,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.85,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "XSMOM",
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3447.76,
+          "avg_monthly_extraction": 3506.65,
+          "avg_monthly_gross": 4125.47,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 50.4,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.85,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
       },
       "fortress_at_target": {
-        "safe_max": 1875.0,
-        "recommended": 1500.0,
-        "current_balance": 53000,
-        "floor": 50500,
-        "buffer_after": 1000.0,
-        "buffer_reserve": 625.0,
-        "dd_type": "EOD_TRAILING",
-        "at_risk": false,
-        "warning": "EOD TRAILING: Use recommended amount only. Run again before each payout."
+        "safe_max": 2750.0,
+        "floor": 47500,
+        "dd_type": "STATIC",
+        "warning": "STATIC DD: Very safe to withdraw. Floor is fixed.",
+        "recommended": 2475.0
       },
       "firm_notes": {
         "pros": [
-          "Affordable ($99/mo)",
-          "Good beginner-friendly structure",
-          "Weekly payout",
-          "Solid support"
+          "STATIC DD \u2014 safest structure (floor never moves up)",
+          "NO daily loss limit \u2014 can take larger intraday swings",
+          "Day-one payouts available",
+          "Tiered split up to 95%",
+          "Custom automation allowed (our system qualifies)",
+          "30% eval rule waived funded"
         ],
         "cons": [
+          "SEMI automation only (custom-built; no commercial bots)",
           "No scaling plan",
-          "80/20 split",
+          "30% eval consistency rule",
           "Less established than top firms"
         ],
-        "noble_strategy": "BUDGET OPTION \u2014 use same APEX/EOD protocol. Low cost = low stress if you need a reset. Standard 50%\u219275%\u2192100% size ramp over 5 days. Expected pass time: 7-10 trading days.",
+        "noble_strategy": "BEST DD STRUCTURE FOR HIGH-CONVICTION DAYS: Static floor + no DLL. Can take bigger swings without risking daily bust. AUTOMATION: Our custom live_firm.py code qualifies as custom-built (not commercial). CONSISTENCY: 30% eval rule \u2014 keep any day under 30% of running eval profit. $300/day \u00d7 10 days = $3,000 (under the 30% cap per day). Standard 50%\u219275%\u2192100% size ramp over 5-7 days. Expected pass time: 8-12 trading days.",
         "best_funded_combo": [],
         "best_instruments": [
           "NQ",
@@ -1949,7 +2996,7 @@
       "full_name": "Funded Trading Plus (FT+)",
       "account_size": 50000,
       "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:14:46.931808",
+      "run_timestamp": "2026-06-26T07:40:37.845894",
       "eval": {
         "top_strategies": [
           {
@@ -1962,11 +3009,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.15201,
-            "pass_rate": 0.9997,
+            "score": 1.15207,
+            "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 9.9,
-            "avg_buffer_pct": 0.9879,
+            "avg_buffer_pct": 0.9876,
             "n_paths": 3000
           },
           {
@@ -1978,11 +3025,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.12879,
+            "score": 1.12877,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 10.4,
-            "avg_buffer_pct": 0.9805,
+            "avg_buffer_pct": 0.9804,
             "n_paths": 3000
           },
           {
@@ -1994,11 +3041,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.11531,
+            "score": 1.11539,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 10.8,
-            "avg_buffer_pct": 0.9932,
+            "avg_buffer_pct": 0.9936,
             "n_paths": 3000
           },
           {
@@ -2010,11 +3057,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.11074,
+            "score": 1.11094,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 10.9,
-            "avg_buffer_pct": 0.9895,
+            "avg_buffer_pct": 0.9905,
             "n_paths": 3000
           },
           {
@@ -2025,11 +3072,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.05408,
+            "score": 1.05115,
             "pass_rate": 0.999,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 12.6,
-            "avg_buffer_pct": 0.9867,
+            "avg_days_to_pass": 12.7,
+            "avg_buffer_pct": 0.9861,
             "n_paths": 3000
           }
         ],
@@ -2043,11 +3090,11 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 1.15201,
-          "pass_rate": 0.9997,
+          "score": 1.15207,
+          "pass_rate": 1.0,
           "bust_rate": 0.0,
           "avg_days_to_pass": 9.9,
-          "avg_buffer_pct": 0.9879,
+          "avg_buffer_pct": 0.9876,
           "n_paths": 3000
         },
         "n_combos_tested": 60
@@ -2055,19 +3102,88 @@
       "funded": {
         "top_strategies": [
           {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
-              "XSMOM"
+              "XSMOM",
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3449.56,
+            "avg_monthly_extraction": 3301.69,
+            "avg_monthly_gross": 4127.11,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 50.4,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3467.78,
+            "avg_monthly_gross": 4334.73,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3283.79,
+            "avg_monthly_gross": 4104.74,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3644.77,
+            "avg_monthly_gross": 4555.96,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -2078,77 +3194,38 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.9,
+            "score": 1.80718,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3609.59,
+            "avg_monthly_extraction": 2793.74,
+            "avg_monthly_gross": 3492.17,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 48.9,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3392.14,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 45.2,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "TAILHDG"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3522.21,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 43.9,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "APEX",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3376.69,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 39.2,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "XSMOM",
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3449.56,
+          "avg_monthly_extraction": 3301.69,
+          "avg_monthly_gross": 4127.11,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 50.4,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.8,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -2189,9 +3266,54 @@
       "full_name": "Bulenox",
       "account_size": 50000,
       "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:15:24.953138",
+      "run_timestamp": "2026-06-26T07:41:37.463047",
       "eval": {
         "top_strategies": [
+          {
+            "strategy": "PAIRS|PRIME_ONLY|CAUTIOUS",
+            "agents": [
+              "PAIRS"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "CAUTIOUS",
+            "score": 1.14952,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.0,
+            "avg_buffer_pct": 0.9976,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM|PRIME_ONLY|CAUTIOUS",
+            "agents": [
+              "PAIRS",
+              "XSMOM"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "CAUTIOUS",
+            "score": 1.14942,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.0,
+            "avg_buffer_pct": 0.9971,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|CAUTIOUS",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "CAUTIOUS",
+            "score": 1.14938,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.0,
+            "avg_buffer_pct": 0.9969,
+            "n_paths": 3000
+          },
           {
             "strategy": "PAIRS|PRIME_ONLY|STANDARD",
             "agents": [
@@ -2199,87 +3321,42 @@
             ],
             "session": "PRIME_ONLY",
             "size": "STANDARD",
-            "score": 1.5995,
+            "score": 1.14908,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9975,
+            "avg_days_to_pass": 10.0,
+            "avg_buffer_pct": 0.9954,
             "n_paths": 3000
           },
           {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|STANDARD",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "STANDARD",
-            "score": 1.59946,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9973,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|STANDARD",
-            "agents": [
-              "PAIRS",
-              "XSMOM",
-              "APEX"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "STANDARD",
-            "score": 1.59934,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9967,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.59926,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9963,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|STANDARD",
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|CAUTIOUS",
             "agents": [
               "PAIRS",
               "XSMOM",
               "VELEZ"
             ],
             "session": "PRIME_ONLY",
-            "size": "STANDARD",
-            "score": 1.59908,
+            "size": "CAUTIOUS",
+            "score": 1.149,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 5.0,
-            "avg_buffer_pct": 0.9954,
+            "avg_days_to_pass": 10.0,
+            "avg_buffer_pct": 0.995,
             "n_paths": 3000
           }
         ],
         "best": {
-          "strategy": "PAIRS|PRIME_ONLY|STANDARD",
+          "strategy": "PAIRS|PRIME_ONLY|CAUTIOUS",
           "agents": [
             "PAIRS"
           ],
           "session": "PRIME_ONLY",
-          "size": "STANDARD",
-          "score": 1.5995,
+          "size": "CAUTIOUS",
+          "score": 1.14952,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
-          "avg_days_to_pass": 5.0,
-          "avg_buffer_pct": 0.9975,
+          "avg_days_to_pass": 10.0,
+          "avg_buffer_pct": 0.9976,
           "n_paths": 3000
         },
         "n_combos_tested": 60
@@ -2297,9 +3374,53 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3522.12,
+            "avg_monthly_extraction": 3060.04,
+            "avg_monthly_gross": 3400.05,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 60.8,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3182.06,
+            "avg_monthly_gross": 3535.62,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3009.44,
+            "avg_monthly_gross": 3343.82,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -2314,9 +3435,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 4322.35,
+            "avg_monthly_extraction": 3755.96,
+            "avg_monthly_gross": 4173.29,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 61.2,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -2331,43 +3456,13 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 4285.65,
+            "avg_monthly_extraction": 3750.89,
+            "avg_monthly_gross": 4167.66,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 60.4,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM",
-              "APEX",
-              "TAILHDG"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 4767.73,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 60.2,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "APEX"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.89983,
-            "survival_rate": 0.9995,
-            "blowup_rate": 0.0005,
-            "avg_monthly_extraction": 3667.28,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 59.4,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
@@ -2382,9 +3477,13 @@
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3522.12,
+          "avg_monthly_extraction": 3060.04,
+          "avg_monthly_gross": 3400.05,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 60.8,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -2402,16 +3501,19 @@
       },
       "firm_notes": {
         "pros": [
+          "FULL automation \u2014 best in class (EAs, bots, Pine, APIs)",
           "Affordable eval fees",
           "Low daily targets (easiest to hit)",
-          "Weekly payout"
+          "100% first $10K then 90/10",
+          "Weekly payout (every Wednesday)"
         ],
         "cons": [
+          "40% consistency rule applies BOTH eval and funded (tightest in industry)",
+          "10 active trading days min before payout (longer than listed)",
           "Low daily loss limit ($500 on 50K) = tight margin",
-          "No scaling plan",
-          "Smaller firm"
+          "Scaling accounts may have intraday trailing DD"
         ],
-        "noble_strategy": "LOW TARGETS = quickest pass if careful. $300/day on 50K is easy on a Tuesday prime session. BUT tight $500 daily loss = must be very precise. Use only 1 MNQ to stay within risk. Expected pass time: 5-7 trading days (fastest possible).",
+        "noble_strategy": "FULL AUTOMATION \u2014 run live_firm.py directly. CONSISTENCY RULE (40% eval AND funded): No single day > 40% of total. Example: $1,000 total profit at payout \u2192 max any one day = $400. LOW TARGETS: $300/day on 50K is achievable. 10 ACTIVE DAYS: Must trade 10 actual days (not just calendar). Strategy: $150-200/day \u00d7 10 days = $1,500-2,000. Tuesday golden hour counts as 1 active day. Keep days balanced \u2014 do not let Tuesday swamp the 40% rule. Expected pass time: 10-14 trading days.",
         "best_funded_combo": [],
         "best_instruments": [
           "MNQ"
@@ -2424,7 +3526,7 @@
       "full_name": "Take Profit Trader (TPT)",
       "account_size": 50000,
       "dd_type": "INTRADAY_TRAILING",
-      "run_timestamp": "2026-06-26T03:16:17.584448",
+      "run_timestamp": "2026-06-26T07:42:34.436957",
       "eval": {
         "top_strategies": [
           {
@@ -2437,11 +3539,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.15213,
+            "score": 1.15225,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 9.9,
-            "avg_buffer_pct": 0.9879,
+            "avg_buffer_pct": 0.9885,
             "n_paths": 3000
           },
           {
@@ -2453,27 +3555,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.13325,
+            "score": 1.12887,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.3,
-            "avg_buffer_pct": 0.9818,
-            "n_paths": 3000
-          },
-          {
-            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM",
-              "APEX"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.11537,
-            "pass_rate": 1.0,
-            "bust_rate": 0.0,
-            "avg_days_to_pass": 10.8,
-            "avg_buffer_pct": 0.9935,
+            "avg_days_to_pass": 10.4,
+            "avg_buffer_pct": 0.9809,
             "n_paths": 3000
           },
           {
@@ -2485,11 +3571,27 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.11102,
+            "score": 1.11479,
+            "pass_rate": 1.0,
+            "bust_rate": 0.0,
+            "avg_days_to_pass": 10.8,
+            "avg_buffer_pct": 0.9906,
+            "n_paths": 3000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.11148,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
             "avg_days_to_pass": 10.9,
-            "avg_buffer_pct": 0.9909,
+            "avg_buffer_pct": 0.9932,
             "n_paths": 3000
           },
           {
@@ -2518,11 +3620,11 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 1.15213,
+          "score": 1.15225,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
           "avg_days_to_pass": 9.9,
-          "avg_buffer_pct": 0.9879,
+          "avg_buffer_pct": 0.9885,
           "n_paths": 3000
         },
         "n_combos_tested": 60
@@ -2530,19 +3632,88 @@
       "funded": {
         "top_strategies": [
           {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
-              "XSMOM"
+              "XSMOM",
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3456.64,
+            "avg_monthly_extraction": 3283.44,
+            "avg_monthly_gross": 4104.3,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 50.4,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3471.84,
+            "avg_monthly_gross": 4339.8,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3272.46,
+            "avg_monthly_gross": 4090.58,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3641.46,
+            "avg_monthly_gross": 4551.82,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
@@ -2553,77 +3724,38 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.9,
+            "score": 1.80686,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3604.5,
+            "avg_monthly_extraction": 2793.02,
+            "avg_monthly_gross": 3491.27,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 49.0,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3387.49,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 45.0,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "TAILHDG"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3527.2,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 44.0,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "APEX",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3368.51,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 39.4,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "XSMOM",
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3456.64,
+          "avg_monthly_extraction": 3283.44,
+          "avg_monthly_gross": 4104.3,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 50.4,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.8,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -2641,17 +3773,19 @@
       },
       "firm_notes": {
         "pros": [
+          "Personal scripts and custom automation allowed",
           "Consistent payouts",
           "Clear rules",
-          "Automation allowed"
+          "PRO+: 90% split"
         ],
         "cons": [
-          "INTRADAY TRAILING DD \u2014 hardest structure",
+          "INTRADAY TRAILING funded \u2014 hardest structure",
           "Floor moves with every new intraday high",
           "Open position P&L affects trailing floor in real time",
-          "Easy to violate unknowingly on volatile NQ days"
+          "Easy to violate unknowingly on volatile NQ days",
+          "Commercial bots BANNED (personal scripts OK)"
         ],
-        "noble_strategy": "INTRADAY TRAILING = different rules. Open P&L counts toward trailing floor in real time. Strategy: 1 MNQ ONLY. Take profit immediately at +$50 per trade. Never let a winner give back more than 50%. Session Governor is MORE critical here \u2014 only trade HIGH ATR + Tuesday. NEVER hold through macro events (open P&L spike \u2192 lower floor). Expected pass time: 10-15 trading days (slower but safer). HONEST NOTE: Consider APEX instead \u2014 same cost, much safer structure.",
+        "noble_strategy": "CUSTOM AUTOMATION: Our live_firm.py counts as proprietary (not commercial). INTRADAY TRAILING = IntradayGuardian REQUIRED from day 1 of PRO phase. Open P&L counts toward trailing floor in real time. Strategy: 1-2 MNQ ONLY. Take profit immediately. Never let a winner give back more than 30%. Session Governor is MORE critical here \u2014 only trade HIGH ATR + Tuesday. NEVER hold through macro events (open P&L spike \u2192 lower floor). Expected pass time: 10-15 trading days. HONEST NOTE: Consider MFFU_RAPID (same structure, better terms).",
         "best_funded_combo": [],
         "best_instruments": [
           "MES",
@@ -2662,10 +3796,10 @@
     },
     "TRUETRD": {
       "firm_key": "TRUETRD",
-      "full_name": "True Trader",
+      "full_name": "Funded Futures Family / True Trader",
       "account_size": 50000,
       "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:17:08.167380",
+      "run_timestamp": "2026-06-26T07:43:31.454153",
       "eval": {
         "top_strategies": [
           {
@@ -2678,11 +3812,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.15223,
+            "score": 1.14764,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 9.9,
-            "avg_buffer_pct": 0.9884,
+            "avg_days_to_pass": 10.0,
+            "avg_buffer_pct": 0.9882,
             "n_paths": 3000
           },
           {
@@ -2694,10 +3828,10 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.12877,
+            "score": 1.12061,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.4,
+            "avg_days_to_pass": 10.6,
             "avg_buffer_pct": 0.9804,
             "n_paths": 3000
           },
@@ -2710,11 +3844,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.11541,
+            "score": 1.10779,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.8,
-            "avg_buffer_pct": 0.9937,
+            "avg_days_to_pass": 11.0,
+            "avg_buffer_pct": 0.9935,
             "n_paths": 3000
           },
           {
@@ -2726,11 +3860,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.11082,
-            "pass_rate": 0.9997,
+            "score": 1.10345,
+            "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.9,
-            "avg_buffer_pct": 0.9905,
+            "avg_days_to_pass": 11.1,
+            "avg_buffer_pct": 0.9902,
             "n_paths": 3000
           },
           {
@@ -2741,11 +3875,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.05131,
-            "pass_rate": 0.9997,
+            "score": 1.04578,
+            "pass_rate": 0.999,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 12.7,
-            "avg_buffer_pct": 0.9855,
+            "avg_days_to_pass": 12.9,
+            "avg_buffer_pct": 0.9867,
             "n_paths": 3000
           }
         ],
@@ -2759,81 +3893,17 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 1.15223,
+          "score": 1.14764,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
-          "avg_days_to_pass": 9.9,
-          "avg_buffer_pct": 0.9884,
+          "avg_days_to_pass": 10.0,
+          "avg_buffer_pct": 0.9882,
           "n_paths": 3000
         },
         "n_combos_tested": 60
       },
       "funded": {
         "top_strategies": [
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3442.65,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 50.3,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "APEX"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3591.47,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 48.7,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "VELEZ"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3405.22,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 45.2,
-            "n_paths": 2000
-          },
-          {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "TAILHDG"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3509.28,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 43.7,
-            "n_paths": 2000
-          },
           {
             "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
@@ -2846,26 +3916,119 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 4258.64,
+            "avg_monthly_extraction": 3225.14,
+            "avg_monthly_gross": 4031.42,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 53.5,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3393.38,
+            "avg_monthly_gross": 4241.73,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "VELEZ"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3218.27,
+            "avg_monthly_gross": 4022.83,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 3563.82,
+            "avg_monthly_gross": 4454.77,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "APEX"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.78376,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 2741.69,
+            "avg_monthly_gross": 3427.11,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.8,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "XSMOM",
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3442.65,
+          "avg_monthly_extraction": 3225.14,
+          "avg_monthly_gross": 4031.42,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 50.3,
+          "avg_payout_events": 12.4,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.8,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -2884,14 +4047,17 @@
       "firm_notes": {
         "pros": [
           "Affordable",
-          "Simple rules"
+          "Simple rules",
+          "Clear payout"
         ],
         "cons": [
+          "\u26a0\ufe0f AUTOMATION BANNED",
           "Less established",
           "No scaling",
-          "Smaller community"
+          "Smaller community",
+          "Manual execution adds friction"
         ],
-        "noble_strategy": "Standard EOD trailing protocol. Same as TradeDay.",
+        "noble_strategy": "Manual execution only. Live_firm.py signals \u2192 Uh-Oh button \u2192 manual Tradovate entry. Standard EOD trailing protocol with manual risk management.",
         "best_funded_combo": [],
         "best_instruments": [
           "MNQ"
@@ -2904,7 +4070,7 @@
       "full_name": "Blue Guardian",
       "account_size": 50000,
       "dd_type": "EOD_TRAILING",
-      "run_timestamp": "2026-06-26T03:17:54.718204",
+      "run_timestamp": "2026-06-26T07:44:32.439389",
       "eval": {
         "top_strategies": [
           {
@@ -2917,11 +4083,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.15219,
+            "score": 1.13013,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 9.9,
-            "avg_buffer_pct": 0.9882,
+            "avg_days_to_pass": 10.4,
+            "avg_buffer_pct": 0.9872,
             "n_paths": 3000
           },
           {
@@ -2933,11 +4099,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.12879,
-            "pass_rate": 1.0,
+            "score": 1.10117,
+            "pass_rate": 0.9997,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.4,
-            "avg_buffer_pct": 0.9805,
+            "avg_days_to_pass": 11.1,
+            "avg_buffer_pct": 0.9794,
             "n_paths": 3000
           },
           {
@@ -2949,11 +4115,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.11549,
+            "score": 1.0933,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.8,
-            "avg_buffer_pct": 0.9941,
+            "avg_days_to_pass": 11.4,
+            "avg_buffer_pct": 0.9928,
             "n_paths": 3000
           },
           {
@@ -2965,11 +4131,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.1109,
+            "score": 1.09272,
             "pass_rate": 1.0,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 10.9,
-            "avg_buffer_pct": 0.9903,
+            "avg_days_to_pass": 11.4,
+            "avg_buffer_pct": 0.9899,
             "n_paths": 3000
           },
           {
@@ -2980,11 +4146,11 @@
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
-            "score": 1.0546,
-            "pass_rate": 1.0,
+            "score": 1.03411,
+            "pass_rate": 0.9967,
             "bust_rate": 0.0,
-            "avg_days_to_pass": 12.6,
-            "avg_buffer_pct": 0.9873,
+            "avg_days_to_pass": 13.3,
+            "avg_buffer_pct": 0.9854,
             "n_paths": 3000
           }
         ],
@@ -2998,33 +4164,17 @@
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
-          "score": 1.15219,
+          "score": 1.13013,
           "pass_rate": 1.0,
           "bust_rate": 0.0,
-          "avg_days_to_pass": 9.9,
-          "avg_buffer_pct": 0.9882,
+          "avg_days_to_pass": 10.4,
+          "avg_buffer_pct": 0.9872,
           "n_paths": 3000
         },
         "n_combos_tested": 60
       },
       "funded": {
         "top_strategies": [
-          {
-            "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
-            "agents": [
-              "PAIRS",
-              "XSMOM"
-            ],
-            "session": "PRIME_ONLY",
-            "size": "AGGRESSIVE",
-            "score": 1.9,
-            "survival_rate": 1.0,
-            "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3455.69,
-            "payout_hit_rate": 1.0,
-            "avg_payout_events": 50.5,
-            "n_paths": 2000
-          },
           {
             "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
@@ -3036,31 +4186,41 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3596.33,
+            "avg_monthly_extraction": 3056.55,
+            "avg_monthly_gross": 3396.17,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 48.8,
+            "avg_payout_events": 12.3,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
-            "strategy": "PAIRS+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+APEX|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
-              "VELEZ"
+              "XSMOM",
+              "APEX"
             ],
             "session": "PRIME_ONLY",
             "size": "AGGRESSIVE",
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3383.08,
+            "avg_monthly_extraction": 3624.25,
+            "avg_monthly_gross": 4026.95,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 45.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
-            "strategy": "PAIRS+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
             "agents": [
               "PAIRS",
+              "APEX",
               "TAILHDG"
             ],
             "session": "PRIME_ONLY",
@@ -3068,15 +4228,20 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3525.65,
+            "avg_monthly_extraction": 3833.94,
+            "avg_monthly_gross": 4259.94,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 43.9,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           },
           {
-            "strategy": "APEX+VELEZ|PRIME_ONLY|AGGRESSIVE",
+            "strategy": "PAIRS+XSMOM+VELEZ|PRIME_ONLY|AGGRESSIVE",
             "agents": [
-              "APEX",
+              "PAIRS",
+              "XSMOM",
               "VELEZ"
             ],
             "session": "PRIME_ONLY",
@@ -3084,26 +4249,56 @@
             "score": 1.9,
             "survival_rate": 1.0,
             "blowup_rate": 0.0,
-            "avg_monthly_extraction": 3379.81,
+            "avg_monthly_extraction": 3608.68,
+            "avg_monthly_gross": 4009.64,
             "payout_hit_rate": 1.0,
-            "avg_payout_events": 39.4,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
+            "n_paths": 2000
+          },
+          {
+            "strategy": "PAIRS+XSMOM+APEX+TAILHDG|PRIME_ONLY|AGGRESSIVE",
+            "agents": [
+              "PAIRS",
+              "XSMOM",
+              "APEX",
+              "TAILHDG"
+            ],
+            "session": "PRIME_ONLY",
+            "size": "AGGRESSIVE",
+            "score": 1.9,
+            "survival_rate": 1.0,
+            "blowup_rate": 0.0,
+            "avg_monthly_extraction": 4028.46,
+            "avg_monthly_gross": 4476.07,
+            "payout_hit_rate": 1.0,
+            "avg_payout_events": 12.4,
+            "payout_ceiling_hit_rate": 0.0,
+            "payout_split": 0.9,
+            "acct_size_mult": 1.0,
             "n_paths": 2000
           }
         ],
         "best": {
-          "strategy": "PAIRS+XSMOM|PRIME_ONLY|AGGRESSIVE",
+          "strategy": "PAIRS+APEX|PRIME_ONLY|AGGRESSIVE",
           "agents": [
             "PAIRS",
-            "XSMOM"
+            "APEX"
           ],
           "session": "PRIME_ONLY",
           "size": "AGGRESSIVE",
           "score": 1.9,
           "survival_rate": 1.0,
           "blowup_rate": 0.0,
-          "avg_monthly_extraction": 3455.69,
+          "avg_monthly_extraction": 3056.55,
+          "avg_monthly_gross": 3396.17,
           "payout_hit_rate": 1.0,
-          "avg_payout_events": 50.5,
+          "avg_payout_events": 12.3,
+          "payout_ceiling_hit_rate": 0.0,
+          "payout_split": 0.9,
+          "acct_size_mult": 1.0,
           "n_paths": 2000
         },
         "n_combos_tested": 60
@@ -3123,13 +4318,16 @@
         "pros": [
           "Very affordable",
           "Weekly payout",
-          "85/15 split"
+          "100% first $15K (highest first-dollar split)",
+          "90/10 after"
         ],
         "cons": [
+          "\u26a0\ufe0f AUTOMATION BANNED (futures)",
+          "40% eval consistency rule",
           "Newer firm (less track record)",
-          "Smaller community"
+          "Manual execution required"
         ],
-        "noble_strategy": "Standard EOD trailing protocol.",
+        "noble_strategy": "Manual execution only (Uh-Oh button). CONSISTENCY: 40% eval rule. Best first-dollar payout makes it worth the manual hassle. EOD trailing standard protocol.",
         "best_funded_combo": [],
         "best_instruments": [
           "MNQ"
@@ -3138,11 +4336,11 @@
       }
     },
     "_meta": {
-      "total_runs": 13,
+      "total_runs": 16,
       "n_strategies": 60,
       "account_size": 50000,
-      "run_timestamp": "2026-06-26T03:17:54.718204",
-      "elapsed_s": 576.1,
+      "run_timestamp": "2026-06-26T07:44:32.439389",
+      "elapsed_s": 1345.2,
       "random_seed": 7777
     }
   },
