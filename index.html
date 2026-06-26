@@ -1704,31 +1704,49 @@ function renderPropBTTable(db) {
 
   const rows = Object.entries(db)
     .filter(([k]) => k !== '_meta')
-    .map(([key, r]) => ({
-      key,
-      name: r.full_name || key,
-      tier: r.tier || 'B',
-      evalPass:   r.eval?.best?.pass_rate || 0,
-      evalDays:   r.eval?.best?.avg_days_to_pass || 0,
-      fundSurv:   r.funded?.best?.survival_rate || 0,
-      fundMonthly:r.funded?.best?.avg_monthly_extraction || 0,
-      evalScore:  r.eval?.best?.score || 0,
-    }))
+    .map(([key, r]) => {
+      const fb = r.funded?.best || {};
+      const split = fb.payout_split != null ? Math.round(fb.payout_split * 100) : 80;
+      const ceiling = fb.payout_ceiling != null ? fb.payout_ceiling : null;
+      const ceilHit = fb.payout_ceiling_hit_rate || 0;
+      return {
+        key,
+        name: r.full_name || key,
+        tier: r.tier || 'B',
+        evalPass:    r.eval?.best?.pass_rate || 0,
+        evalDays:    r.eval?.best?.avg_days_to_pass || 0,
+        fundSurv:    fb.survival_rate || 0,
+        fundMonthly: fb.avg_monthly_extraction || 0,
+        fundGross:   fb.avg_monthly_gross || fb.avg_monthly_extraction || 0,
+        evalScore:   r.eval?.best?.score || 0,
+        split, ceiling, ceilHit,
+        ddType:      r.dd_type || '',
+      };
+    })
     .sort((a, b) => b.evalScore - a.evalScore);
 
   if (!rows.length) return;
 
   tbody.innerHTML = rows.map(r => {
     const tc = TIER_COLOR[r.tier] || '#888';
+    const capLabel = r.ceiling ? `$${(r.ceiling/1000).toFixed(0)}K cap` : 'no cap';
+    const capColor = r.ceilHit > 0.3 ? '#ef4444' : (r.ceiling ? '#f59e0b' : '#22c55e');
+    const splitColor = r.split >= 90 ? '#22c55e' : r.split >= 85 ? '#4a9eff' : 'var(--muted)';
+    const intraday = r.ddType === 'INTRADAY_TRAILING';
     return `<tr style="border-bottom:1px solid var(--border)">
       <td style="padding:4px 0">
         <span style="color:${tc};font-weight:700;font-size:9px">[${r.tier}]</span>
         <span style="color:var(--text);margin-left:4px">${r.key}</span>
+        ${intraday ? '<span style="color:#f59e0b;font-size:8px;margin-left:4px">⚡INTRA</span>' : ''}
       </td>
       <td style="text-align:center;padding:4px;color:${r.evalPass>0.7?'#22c55e':'var(--muted)'}">${(r.evalPass*100).toFixed(0)}%</td>
       <td style="text-align:center;padding:4px;color:var(--muted)">${r.evalDays.toFixed(1)}</td>
       <td style="text-align:center;padding:4px;color:${r.fundSurv>0.8?'#4a9eff':'var(--muted)'}">${(r.fundSurv*100).toFixed(0)}%</td>
-      <td style="text-align:right;padding:4px 0;color:var(--gold)">$${Math.round(r.fundMonthly).toLocaleString()}</td>
+      <td style="text-align:center;padding:4px;font-size:10px">
+        <span style="color:${splitColor}">${r.split}%</span>
+        <span style="color:${capColor};font-size:8px;margin-left:2px">${capLabel}</span>
+      </td>
+      <td style="text-align:right;padding:4px 0;color:var(--gold)">$${Math.round(r.fundMonthly).toLocaleString()}<span style="color:var(--muted);font-size:9px"> net</span></td>
     </tr>`;
   }).join('');
 }
@@ -1762,14 +1780,28 @@ function renderStrategyCards(db) {
   fundedDiv.innerHTML = firms.map(([key, r]) => {
     const b = r.funded?.best || {};
     const agents = (b.agents || []).join('+') || '—';
-    return `<div style="border-bottom:1px solid var(--border);padding:6px 0;display:flex;justify-content:space-between;align-items:center">
-      <div>
-        <span style="color:var(--text);font-weight:700">${key}</span>
-        <span style="color:var(--muted);margin-left:6px">${agents}</span>
-        <span style="color:#a855f7;margin-left:6px;font-size:9px">[${b.size||'STD'}]</span>
+    const split  = b.payout_split != null ? Math.round(b.payout_split * 100) : 80;
+    const monthly = Math.round(b.avg_monthly_extraction || 0);
+    const gross   = Math.round(b.avg_monthly_gross || monthly);
+    const ceiling = b.payout_ceiling;
+    const capStr  = ceiling ? ` · cap $${(ceiling/1000).toFixed(0)}K` : ' · no cap';
+    const splitColor = split >= 90 ? '#22c55e' : split >= 85 ? '#4a9eff' : 'var(--muted)';
+    return `<div style="border-bottom:1px solid var(--border);padding:6px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <span style="color:var(--text);font-weight:700">${key}</span>
+          <span style="color:var(--muted);margin-left:6px;font-size:11px">${agents}</span>
+        </div>
+        <div style="text-align:right">
+          <span style="color:var(--gold);font-weight:700">$${monthly.toLocaleString()}</span>
+          <span style="color:var(--muted);font-size:9px">/mo net</span>
+        </div>
       </div>
-      <div style="text-align:right;color:var(--muted)">
-        ${(b.survival_rate*100||0).toFixed(0)}% surv · $${Math.round(b.avg_monthly_extraction||0)}/mo
+      <div style="color:var(--muted);font-size:9px;margin-top:2px">
+        ${(b.survival_rate*100||0).toFixed(0)}% surv
+        · <span style="color:${splitColor}">${split}% split</span>
+        ${capStr}
+        · ${b.avg_payout_events?.toFixed(1)||'?'} payouts/cycle
       </div>
     </div>`;
   }).join('') || '<div style="color:var(--muted)">Run PropBT sweep first.</div>';
